@@ -1,0 +1,55 @@
+.tab1{
+    border-color: brown;
+    width: 100%;
+    margin-top: 20px;
+    float:left;    
+}
+.tb1{
+    background-color: aqua;
+    border-color: brown;
+    width: fit-content;
+    float: left;
+}
+.tb2{
+    margin-left: 20px;
+    background-color:green;
+    float: left;
+    width: fit-content;
+}
+.tb3{
+    margin-left: 20px;
+    background-color: yellow;
+    float: left;
+    border-color: brown;
+}
+
+.sub{
+    text-align: center;
+    background-color: orange;
+    font-size:20px;
+}
+.f_size_tb{
+    font-size:20px;
+    width: 150px;
+    
+}
+.f_size_ts{
+    font-size:20px;
+    width: 50px;
+}
+.f_size_sx{
+    font-size:20px;
+    width: 50px;
+}
+
+.f_size_pha{
+    letter-spacing: 4px;
+    height:40px ;
+    width: 40px ;
+}
+.lb{
+    text-align: center;
+    background-color: orange;
+    font-weight: bold;
+}
+
