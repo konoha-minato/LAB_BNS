@@ -1,17 +1,509 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1"> 
-      <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script> 
-     <script type="text/javascript">
-    $(function(){//from   w  ww . j av  a 2 s  .  c om
-    $(document).ready(function () {
-            $('#openApp')[0].click();
-        });
-    });
-      </script> 
-  </head>
-  <body>
-    <a href="https://script.google.com/macros/s/AKfycby2wOfsXIbntT7L9XVRc__Vpbyl4tAkmAHVx1tBHKGOkvNnLX7vCBs5s96CD5GUdpc/exec" target="_top" id="openApp"></a>
-  </body>
+<head>
+  <title>TRA CUU</title>
+  <style>
+    .do-dem{
+    border-color: brown;
+    width :fit-content;
+    max-width: 100%;
+    margin-top: 5px;
+    float:left;
+    font-size:30pt;
+}
+.tabs{
+  display: none;
+  float:left;
+}
+.tb1{
+    background-color: aqua;
+    border-color: brown;
+    width: fit-content;
+    float: left;
+    margin-left: 10px;
+    font-size:30pt;
+    width:200px;
+    height:80px;
+}
+.tb2{
+    margin-left: 20px;
+    background-color:green;
+    float: left;
+    width: fit-content;
+}
+.tb3{
+    margin-left: 20px;
+    background-color: yellow;
+    float: left;
+    border-color: brown;
+}
+
+.sub{
+    text-align: center;
+    background-color: orange;
+    font-size:40pt;
+}
+.f_size_input{
+    font-size:40pt;
+    width: 200px;
+    
+}
+.f_size_lb{
+    font-size:40pt;
+    width: fit-content;
+}
+.f_size_thuoc{
+    font-size:35pt;
+}
+.f_size_phantich{
+    font-size:42pt;
+    padding-left:5px;
+    width:10%;
+    float: left;
+}
+.f_size_phantich_lb{
+    font-size:42pt;
+    padding-left:5px;
+    width:25%;
+    float: left;
+}
+
+.f_size_phantich_res{
+    font-size:42pt;
+    width:fit-contents ;
+    background-color:cyan;
+}
+.f_size_caphat{
+    font-size:50pt;
+    padding-left:5px;
+    width:26%;
+    float: left;
+}
+.f_size_caphat_lb{
+    font-size:50pt;
+    padding-left:5px;
+    width:25%;
+    float: left;
+}
+
+.f_size_pha{
+    letter-spacing: 4px;
+    height:40px ;
+    width: 40px ;
+}
+.lb{
+    font-weight: bold;
+    width: 20vw;
+}
+.button{
+    font-weight: bold;
+    width: fit-content;
+}
+</style>
+</head>
+<body style="font-size:15pt; font-family: Verdana;float:inline-start; float: left;">
+  <div id="menu" style="float:none">
+    <button class="tb1" onclick="set_tab('dodem')" >Lưu lượng</button>
+    <button class="tb1" onclick="set_tab('hoachat')" id="defaultOpen" >Hoá chất</button>
+    <button class="tb1" onclick="set_tab('caphat')">Cấp hạt</button>
+    <button class="tb1" onclick="set_tab('phantich')">Phân tích</button>
+    <button class="tb1" onclick="set_tab('note')">NOTE</button>
+  </div>
+  <div id="hoachat" class="tabs" >
+      <div class="do-dem" style="float: none;">
+        <div style="padding-top: 10px;">
+            <a style="color:red;">Tên mẫu </a><input class="f_size_input" type="text" maxlength="20" id="ten_mau" placeholder="tên mẫu">
+            <button style="background-color:red; border-radius:10px; font-size: 40px;" onclick="save_bun()" >LƯU DỮ LIỆU</button>
+        </div>
+        <div style="padding-top: 10px;">
+            <a style="color:red;">Mẫu (g) </a><input class="f_size_input" type="number" max="1000" id="mau_g" value="260" onchange="set_mau_g()">
+            <a style="color:red;">D= </a><input class="f_size_input" type="number" max="10" value="2.6" id="d">
+        </div>
+        <table style="padding-top: 10px;">
+            <tr>
+                <td>M (g)</td>
+                <td><input class="f_size_lb" type="number" min="1" max="3000" value="2000" id="m_g" onchange="set_mau_g()"></td>
+                <td>Rắn (%)</td>
+                <td><a class="f_size_lb" id="r"></a></td>
+            </tr>
+            <tr>
+                <td>V (ml)</td>
+                <td><input class="f_size_lb" type="number" min="1" max="3000" id="v_ml" value="1000"></td>
+                <td>Bùn cân (g)</td>
+                <td><a class="f_size_lb" id="bun_can"></a></td>
+            </tr>
+            <tr>
+                <td>M bình (g)</td>
+                <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_binh" value="700" onchange="set_mau_g()" ></td>
+                <td>Bùn (cả bì)</td>
+                <td><a class="f_size_lb" id="bun_can3"></a></td>
+            </tr>
+            <tr>
+                <td>M bì (g)</td>
+                <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_bi" value="70" onchange="set_mau_g()" ></td>
+            </tr>
+        </table>
+      </div>
+      <div class="do-dem">
+        <table>
+            <tr>
+                <td colspan="4" class="sub" onclick="save_thuoc()">Lưu lượng thuốc</td>
+            </tr>
+            <tr>
+              <td><input style="width:100%;font-size: 40pt;" type="text" maxlength="5" placeholder="tên tn" id="ten_tn"></td>
+              <td colspan="3"><input class="f_size_lb" type="text" maxlength="100" placeholder="des tn" id="des_tn"></td>
+            </tr>
+            <tr>
+              <td >
+                <a id="tth_mode">TTH SX</a>
+                <input class="f_size_pha" type="checkbox" id="tth" onclick="check()">
+              </td>
+              <td>TTL</td>
+              <td>XÚT</td>
+              <td>TTH</td>
+            </tr>
+            <tr>
+              <td style="background-color:yellow;" onclick="cptn()">Chi  phí (g/T)</td> 
+              <td><input class="f_size_thuoc" type="number" min="1" max="3000" value="500" id="ttl_gt" onchange="set_mau_g()"></td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="3000" value="200" id="xut_gt" onchange="set_mau_g()"></td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="3000" value="300" id="tth_gt" onchange="set_mau_g()"></td>
+            </tr>
+            <tr>
+              <td>Chi phí (ml)</td>
+              <td class="f_size_thuoc" id="ttl_ml"></td>
+              <td class="f_size_thuoc" id="xut_ml"></td>
+              <td class="f_size_thuoc" id="tth_ml"></td>
+            </tr>
+            <tr>
+              <td>Tỉ lệ (%)</td>
+              <td class="f_size_thuoc" id="ttl_r">5</td>
+              <td class="f_size_thuoc" id="xut_r">2</td>
+              <td class="f_size_thuoc" id="tth_r">1.2</td>
+            </tr>
+            <tr>
+              <td style="background-color:green;" onclick="mode_sx()">Năng suất</td>
+              <td class="f_size_thuoc" id="ttl_sx"></td>
+              <td class="f_size_thuoc" id="xut_sx"></td>
+              <td class="f_size_thuoc" id="tth_sx"></td>
+            </tr>
+            <tr>
+              <td><input class="f_size_thuoc" style="width: 150px;" type="number" min="1" max="500" value="155" id="ns" onchange="chiphi_sx()"> (T/h)</td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="1000" value="1200" id="ttl_ll" onchange="chiphi_sx()"></td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="1000" value="1000" id="xut_ll" onchange="chiphi_sx()"></td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="1000" value="3000" id="tth_ll" onchange="chiphi_sx()"></td>
+            </tr>
+        </table>
+      </div>
+  </div>
+  <div id="caphat" class="tabs">
+    <p>
+      <label style="color:red;font-size: 50pt;" onclick="save_ch()">Giờ </label>
+      <input style="width:max-content" class="f_size_input" type="text" maxlength="20" id="time" placeholder="giờ lấy"></p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_1" value="Nghiền 1">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_1" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_1" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_1" onclick="set_caphat(1)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_2" value="Nghiền 2">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_2" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_2" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_2" onclick="set_caphat(2)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_3" value="PC đơn">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_3" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_3" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_3" onclick="set_caphat(3)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_4" value="PC kép">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_4" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_4" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_4" onclick="set_caphat(4)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_5" value="tràn 1">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_5" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_5" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_5" onclick="set_caphat(5)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_6" value="tràn 2">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_6" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_6" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_6" onclick="set_caphat(6)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_7" value="tràn 3">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_7" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_7" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_7" onclick="set_caphat(7)" >res</label>
+    </p>
+    <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_8" value="cát 1">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_8" placeholder="âm">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_8" placeholder="tổng">
+    <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_8" onclick="set_caphat(8)" >res</label>
+  </p>
+  <p>
+    <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_9" value="cát 2">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_9" placeholder="âm">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_9" placeholder="tổng">
+    <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_9" onclick="set_caphat(9)" >res</label>
+  </p>
+  <p>
+    <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_10" value="cát 3">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_10" placeholder="âm">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_10" placeholder="tổng">
+    <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_10" onclick="set_caphat(10)" >res</label>
+  </p>
+  
+  </div>
+  <div id="phantich" class="tabs">
+    <table  style="width:100%; margin-top: 5px;">
+      <tr>
+        <td><a style="color:red;font-size: 50pt;">NaOH</a></td>
+        <td><input style="width:max-content" class="f_size_input" type="number" maxlength="20" id="naoh" placeholder="naoh"></td>
+      </tr>
+      <tr>
+        <td><a style="color:red;font-size: 50pt;">HSO</a></td>
+        <td><input style="width:max-content"class="f_size_input" type="number" maxlength="20" id="hso" placeholder="hso"></td>
+      </tr>
+    </table>
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_1" placeholder="TN1">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_1" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_1" placeholder="hso" >
+      <label class="f_size_phantich_res" id="pt_res_1" onclick="set_pt(1)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_2" value="TC1_2">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_2" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_2" placeholder="hso" >
+      <label class="f_size_phantich_res" id="pt_res_2" onclick="set_pt(2)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_3" value="TC3_4">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_3" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_3" placeholder="hso" >
+      <label class="f_size_phantich_res" id="pt_res_3" onclick="set_pt(3)">res</label>
+    </p>
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_4" value="TT1">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_4" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_4" placeholder="hso" >
+      <label class="f_size_phantich_res" id="pt_res_4" onclick="set_pt(4)">res</label>
+    </p>
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_5" value="TT2">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_5" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_5" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_5" onclick="set_pt(5)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_6" value="BV1">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_6" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_6" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_6" onclick="set_pt(6)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_7" value="BV2">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_7" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_7" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_7" onclick="set_pt(7)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_8" value="TG1">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_8" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_8" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_8" onclick="set_pt(8)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_8" value="TG2">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_8" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_8" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_8" onclick="set_pt(8)">res</label>
+    </p> 
+  </div>
+  <div id="note" class="tabs">
+    <p><input style="width:fit-content" class="f_size_input" type="text" maxlength="20" id="note_sub" placeholder="tiêu đề"></p>
+    <p><input style="width:max-content; height:100%" class="f_size_input" type="text" id="note_content" placeholder="nội dung gửi"></p>
+    <p><button style="background-color: cyan; width:100%; height:100%; font-size:40pt;align-items:center;" onclick="save_note()">GỬI</p>
+  </div>
+<script>
+//g bùn
+  var x=screen.width
+  var y=screen.height
+  var k_hso,k_naoh
+  set_mau_g()
+  chiphi_sx()
+  document.getElementById("defaultOpen").click();
+  document.getElementById("naoh").addEventListener("keyup",function(e){
+    if (e.keyCode == 13) {
+      k_naoh=document.getElementById("naoh").value
+      k_hso=document.getElementById("hso").value
+      console.log(k_naoh+"_"+k_hso)
+      }
+  });
+
+  //get data from gsheet
+  // google.script.run.withSuccessHandler(getsheet).get_data();
+  function getsheet(data){
+    // console.log(data)
+    document.getElementById("naoh").value =data[0][0]
+    document.getElementById("hso").value =data[1][0]
+  }
+
+  function set_mau_g(){
+    var m,mau,v,mb,d,bi,r,ttl_r
+      d= document.getElementById("d").value
+      mau= document.getElementById("mau_g").value
+      m= document.getElementById("m_g").value
+      v= document.getElementById("v_ml").value
+      mb= document.getElementById("m_binh").value
+      bi= parseInt(document.getElementById("m_bi").value)
+      r=((((d*v)/(m-mb)-d)/(1-d))*100).toFixed(2)
+      document.getElementById("r").innerHTML =r
+      document.getElementById("bun_can").innerHTML =Math.floor((mau*100)/r)
+      document.getElementById("bun_can3").innerHTML =Math.floor((mau*100)/r)+bi
+      chiphi_thuoc (mau)
+  }
+
+  function set_pt(num){
+    var ten, naoh,hso,res
+      k_naoh=document.getElementById("naoh").value
+      k_hso=document.getElementById("hso").value
+      ten= document.getElementById("pt_name_" +num).value
+      naoh= document.getElementById("pt_xut_" +num).value      
+      hso= document.getElementById("pt_axit_" +num).value
+      res=Math.floor(k_naoh*naoh*100)-Math.floor(k_hso*hso*0.1*100)
+      res=res/100
+      // console.log(k_naoh+"_"+k_hso)
+      document.getElementById("pt_res_" +num).innerHTML = (0.01*parseInt(k_naoh*naoh*100)).toFixed(2)+","+(0.01*parseInt(k_hso*hso*0.1*100)).toFixed(2) +"_"+res
+      // if (ten!=""){google.script.run.addEvent([ten,"P2O5",res])};
+  }
+
+  function set_caphat(num){
+    var am,tong,res,ten
+      ten= document.getElementById("ch_name_" +num).value
+      am= document.getElementById("ch_am_"+num).value
+      tong= document.getElementById("ch_tong_"+num).value      
+      console.log(am+"_"+tong)
+      res=Math.floor((am/tong)*10000)/100
+      console.log(res)
+      document.getElementById("ch_res_"+num).innerHTML=res
+      // if (ten!=""){google.script.run.addEvent([ten,"CH",res])};
+
+  }
+  function check(){ //mode tth
+    var log= document.getElementById("tth").checked
+    if (log==true){
+      document.getElementById('tth_mode').innerHTML = "TTH PHA"
+      document.getElementById('tth_r').innerHTML = "1"
+    } else {
+      document.getElementById('tth_mode').innerHTML = "TTH SX"
+      document.getElementById('tth_r').innerHTML = "1.2"
+    }
+    //tinh thuoc
+    chiphi_thuoc (document.getElementById("mau_g").value)
+  
+  }
+
+  function chiphi_thuoc(mau_g){
+    var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml
+      ttl= document.getElementById("ttl_gt").value
+      xut= document.getElementById("xut_gt").value
+      tth= document.getElementById("tth_gt").value
+      ttl_r= Number(document.getElementById("ttl_r").textContent)
+      xut_r= Number(document.getElementById("xut_r").textContent)
+      tth_r= Number(document.getElementById("tth_r").textContent)
+      ttl_ml= (ttl*0.000001*mau_g)/(ttl_r/100)
+      xut_ml= (xut*0.000001*mau_g)/(xut_r/100)
+      tth_ml= (tth*0.000001*mau_g)/(tth_r/100)
+      document.getElementById("ttl_ml").innerHTML =ttl_ml.toFixed(2)
+      document.getElementById("xut_ml").innerHTML =xut_ml.toFixed(2)
+      document.getElementById("tth_ml").innerHTML =tth_ml.toFixed(2)
+  }
+  function chiphi_sx(){
+    var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml,mau,ns
+      ns= document.getElementById("ns").value
+      mau= document.getElementById("mau_g").value
+      ttl= document.getElementById("ttl_ll").value
+      xut= document.getElementById("xut_ll").value
+      tth= document.getElementById("tth_ll").value
+      ttl_r= Number(document.getElementById("ttl_r").textContent)
+      xut_r= Number(document.getElementById("xut_r").textContent)
+      tth_r= Number(document.getElementById("tth_r").textContent)
+      ttl_ml= (ttl*ttl_r*10)/ns
+      xut_ml= (xut*xut_r*10)/ns
+      tth_ml= (tth*tth_r*10)/ns
+      document.getElementById("ttl_sx").innerHTML =Math.floor(ttl_ml)
+      document.getElementById("xut_sx").innerHTML =Math.floor(xut_ml)
+      document.getElementById("tth_sx").innerHTML =Math.floor(tth_ml)
+  }
+  
+  function mode_sx(){
+    var tth,ttl,xut,mau
+      mau= document.getElementById("mau_g").value
+      ttl= Number(document.getElementById("ttl_sx").textContent)
+      xut= Number(document.getElementById("xut_sx").textContent)
+      tth= Number(document.getElementById("tth_sx").textContent)
+      document.getElementById("ttl_gt").value =(Math.floor(ttl/10)+1)*10
+      document.getElementById("xut_gt").value =(Math.floor(xut/5)+1)*5
+      document.getElementById("tth_gt").value =(Math.floor(tth/10)+1)*10
+      chiphi_thuoc(mau)
+
+  }
+  function cptn(){
+    var mau
+      mau= document.getElementById("mau_g").value
+      document.getElementById("ttl_gt").value =500
+      document.getElementById("xut_gt").value =200
+      document.getElementById("tth_gt").value =300
+      chiphi_thuoc(mau)
+  }
+  function set_tab(name_tab) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabs");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tb1");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(name_tab).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+//save to gsheet
+
+  // function save_thuoc(){
+  //   var vl1,vl2,vl3,vl4,vl5
+  //   vl1 = document.getElementById("ten_tn").value;
+  //   vl2 = document.getElementById("ttl_gt").value;
+  //   vl3 = document.getElementById("xut_gt").value;
+  //   vl4 = document.getElementById("tth_gt").value;
+  //   vl5 = document.getElementById("des_tn").value;
+  //   var res=[vl2,vl3,vl4].join("_")
+  //   data=[vl1,vl5,res]
+  // }
+
+  // function save_bun(){
+  //   var name,vl,data
+  //   name = document.getElementById("ten_mau").value;
+  //   vl= document.getElementById("r").textContent;
+  //   data=[name,"r=" +vl]
+  // }
+
+  // function save_note(){
+  //   var name,vl
+  //   name = document.getElementById("note_sub").value;
+  //   vl= document.getElementById("note_content").textContent;
+  //   data=[name,vl]
+  // }
+
+</script>
+</body>
 </html>
