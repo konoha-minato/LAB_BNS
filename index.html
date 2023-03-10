@@ -3,6 +3,7 @@
 <head>
   <title>TRA CUU</title>
   <link rel="stylesheet" href="styles.css">
+</head>
 <body style="font-size:15pt; font-family: Verdana;float:inline-start; float: left;">
   <div id="menu" style="float:none">
     <button class="tb1" onclick="set_tab('dodem')" >Lưu lượng</button>
@@ -48,11 +49,15 @@
       </div>
       <div class="do-dem">
         <table>
-            <tr>
-                <td colspan="4" onclick="save_thuoc()">Lưu lượng thuốc</td>
+            <colgroup width="10%"> 
+            <colgroup width="30%"> 
+            <colgroup width="30%"> 
+            <colgroup width="30%"> 
+                <tr>
+                <td colspan="4" class="sub" onclick="save_thuoc()">Lưu lượng thuốc</td>
             </tr>
             <tr>
-              <td><input style="width:350px;font-size: 40pt;" type="text" maxlength="5" placeholder="tên tn" id="ten_tn"></td>
+              <td><input style="width:15%;font-size: 40pt;" type="text" maxlength="5" placeholder="tên tn" id="ten_tn"></td>
               <td colspan="3"><input class="f_size_lb" type="text" maxlength="100" placeholder="des tn" id="des_tn"></td>
             </tr>
             <tr>
@@ -65,34 +70,34 @@
               <td>TTH</td>
             </tr>
             <tr>
-              <td onclick="cptn()">Chi  phí (g/T)</td> 
-              <td><input class="f_size_chiphi" type="number" min="1" max="3000" value="500" id="ttl_gt" onchange="set_mau_g()"></td>
-              <td><input class="f_size_chiphi" type="number" min="1" max="3000" value="200" id="xut_gt" onchange="set_mau_g()"></td>
-              <td><input class="f_size_chiphi" type="number" min="1" max="3000" value="300" id="tth_gt" onchange="set_mau_g()"></td>
+              <td style="background-color:yellow;" onclick="cptn()">Chi  phí (g/T)</td> 
+              <td><input class="f_size_thuoc" type="number" min="1" max="3000" value="500" id="ttl_gt" onchange="set_mau_g()"></td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="3000" value="200" id="xut_gt" onchange="set_mau_g()"></td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="3000" value="300" id="tth_gt" onchange="set_mau_g()"></td>
             </tr>
             <tr>
               <td>Chi phí (ml)</td>
-              <td id="ttl_ml"></td>
-              <td id="xut_ml"></td>
-              <td id="tth_ml"></td>
+              <td class="f_size_thuoc" id="ttl_ml"></td>
+              <td class="f_size_thuoc" id="xut_ml"></td>
+              <td class="f_size_thuoc" id="tth_ml"></td>
             </tr>
             <tr>
               <td>Tỉ lệ (%)</td>
-              <td id="ttl_r">5</td>
-              <td id="xut_r">2</td>
-              <td id="tth_r">1.2</td>
+              <td class="f_size_thuoc" id="ttl_r">5</td>
+              <td class="f_size_thuoc" id="xut_r">2</td>
+              <td class="f_size_thuoc" id="tth_r">1.2</td>
             </tr>
             <tr>
-              <td onclick="mode_sx()">Năng suất</td>
-              <td id="ttl_sx"></td>
-              <td id="xut_sx"></td>
-              <td id="tth_sx"></td>
+              <td style="background-color:green;" onclick="mode_sx()">Năng suất</td>
+              <td class="f_size_thuoc" id="ttl_sx"></td>
+              <td class="f_size_thuoc" id="xut_sx"></td>
+              <td class="f_size_thuoc" id="tth_sx"></td>
             </tr>
             <tr>
-              <td><input style="width: 100px; font-size: 1em;" type="number" min="1" max="500" value="155" id="ns" onchange="chiphi_sx()"> (T/h)</td>
-              <td><input type="number" min="1" max="1000" value="1200" id="ttl_ll" onchange="chiphi_sx()"></td>
-              <td><input type="number" min="1" max="1000" value="1000" id="xut_ll" onchange="chiphi_sx()"></td>
-              <td><input type="number" min="1" max="1000" value="3000" id="tth_ll" onchange="chiphi_sx()"></td>
+              <td><input style="width: 150px;font-size: 1em;" type="number" min="1" max="500" value="155" id="ns" onchange="chiphi_sx()"> (T/h)</td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="1000" value="1200" id="ttl_ll" onchange="chiphi_sx()"></td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="1000" value="1000" id="xut_ll" onchange="chiphi_sx()"></td>
+              <td><input class="f_size_thuoc" type="number" min="1" max="1000" value="3000" id="tth_ll" onchange="chiphi_sx()"></td>
             </tr>
         </table>
       </div>
@@ -233,5 +238,6 @@
     <p><input style="width:max-content; height:100%" class="f_size_input" type="text" id="note_content" placeholder="nội dung gửi"></p>
     <p><button style="background-color: cyan; width:100%; height:100%; font-size:40pt;align-items:center;" onclick="save_note()">GỬI</p>
   </div>
-<script src="code.js"></script></html>
+  <script src="code.js"></script>
 </body>
+</html>
