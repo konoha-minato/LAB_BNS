@@ -40,21 +40,25 @@
 }
 .f_size_input{
     font-size:40pt;
-    
+    width: fit-content;
+
 }
 .f_size_lb{
     font-size:40pt;
     width: fit-content;
 }
+
 .f_size_thuoc{
-    font-size:35pt;
+    font-size:40pt;
 }
+
 .f_size_phantich{
     font-size:42pt;
     padding-left:5px;
     width:10%;
     float: left;
 }
+
 .f_size_phantich_lb{
     font-size:42pt;
     padding-left:5px;
