@@ -12,10 +12,13 @@
       console.log(k_naoh+"_"+k_hso)
       }
   });
-
+  {
+    
+  }
   //get data from gsheet
   // google.script.run.withSuccessHandler(getsheet).get_data();
-  function getsheet(data){
+  function getsheet(){
+    
     // console.log(data)
     document.getElementById("naoh").value =data[0][0]
     document.getElementById("hso").value =data[1][0]

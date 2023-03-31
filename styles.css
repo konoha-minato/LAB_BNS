@@ -92,6 +92,11 @@
     height:40px ;
     width: 40px ;
 }
+.f_size_tronmau{
+    font-size:40pt;
+    width: 90%;
+}
+
 .lb{
     font-weight: bold;
     width: 20vw;
