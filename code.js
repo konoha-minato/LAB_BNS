@@ -6,6 +6,7 @@ set_mau_g()
 chiphi_sx()
 chia_bun(1)
 chia_bun(2)
+chia_bun(3)
 
 document.getElementById("defaultOpen").click();
 document.getElementById("naoh").addEventListener("keyup",function(e){
@@ -151,7 +152,7 @@ function set_tab(name_tab) {
 function chia_bun(num) {
   var r=[];
   var gam, tile, d;
-  var i,temp
+  var i
   tile=0
   gam = document.getElementById("gam"+num).value;
   for (i = 1; i < 4; i++) {
@@ -161,9 +162,9 @@ function chia_bun(num) {
   
   for (i = 1; i < 4; i++) {
     d = document.getElementById("d"+num+"-"+i).value;
-    console.log(d)
+    // console.log(d)
     if (d>0){
-      console.log((d/tile)*(gam/r[i-1]))
+      // console.log((d/tile)*(gam/r[i-1]))
       document.getElementById("g"+num+"-"+i).innerHTML=((d/tile)*(gam/r[i-1])*100).toFixed(0)
     }else{
       document.getElementById("g"+num+"-"+i).innerHTML=""
