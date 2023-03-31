@@ -163,7 +163,7 @@ function chia_bun(num) {
   for (i = 1; i < 4; i++) {
     d = document.getElementById("d"+num+"-"+i).value;
     // console.log(d)
-    if (d>0){
+    if (d>0 ||d!=""){
       // console.log((d/tile)*(gam/r[i-1]))
       document.getElementById("g"+num+"-"+i).innerHTML=((d/tile)*(gam/r[i-1])*100).toFixed(0)
     }else{
