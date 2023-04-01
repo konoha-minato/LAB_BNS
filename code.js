@@ -6,6 +6,7 @@ set_mau_g()
 chiphi_sx()
 chia_bun(1)
 chia_bun(2)
+chia_bun(3)
 
 document.getElementById("defaultOpen").click();
 document.getElementById("naoh").addEventListener("keyup",function(e){
