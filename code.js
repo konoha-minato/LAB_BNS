@@ -2,11 +2,9 @@
 var x=screen.width
 var y=screen.height
 var k_hso,k_naoh
+var data_mau={}
 set_mau_g()
 chiphi_sx()
-chia_bun(1)
-chia_bun(2)
-chia_bun(3)
 
 document.getElementById("defaultOpen").click();
 document.getElementById("naoh").addEventListener("keyup",function(e){
@@ -149,29 +147,30 @@ function set_tab(name_tab) {
   document.getElementById(name_tab).style.display = "block";
   evt.currentTarget.className += " active";
 }
-function chia_bun(num) {
-  var r=[];
-  var gam, tile, d;
-  var i,temp
-  tile=0
-  gam = document.getElementById("gam"+num).value;
-  for (i = 1; i < 4; i++) {
-    
-    tile = tile + parseInt(document.getElementById("d"+num+"-" +i).value)
-    r.push(parseInt(document.getElementById("r"+i).value))
+
+function chia_mau(num) {
+  var j
+  for (j=1;j<=7;j++){
+    gam = document.getElementById("gam"+j).value;
+    r= parseInt(document.getElementById("r"+num).value)
+    document.getElementById("g"+j+"-"+num).innerHTML=((gam/r)*100).toFixed(0)
+    // console.log(gam)    
   }
-    // console.log(tile)
-  
-  for (i = 1; i < 4; i++) {
-    d = parseInt(document.getElementById("d"+num+"-"+i).value)
-    // console.log(d)
-    if (!isNaN(d)){
-      // console.log((d/tile)*(gam/r[i-1]))
-      document.getElementById("g"+num+"-"+i).innerHTML=((d/tile)*(gam/r[i-1])*100).toFixed(0)
-    }else{
-      document.getElementById("g"+num+"-"+i).innerHTML=""
-    }
+}
+
+function chia_bun(num) {
+  var gam,r;
+  var i,j
+  if (num==""){num=7}
+  for (j=1;j<=num;j++){
+    gam = document.getElementById("gam"+j).value;
+    console.log(gam)
     
+    for (i = 1; i < 4; i++) {
+      r= parseInt(document.getElementById("r"+i).value)
+      // console.log(d)
+      document.getElementById("g"+j+"-"+i).innerHTML=((gam/r)*100).toFixed(0)    
+    }
   }
 }
 
@@ -188,12 +187,22 @@ function chia_bun(num) {
 //   data=[vl1,vl5,res]
 // }
 
-// function save_bun(){
-//   var name,vl,data
-//   name = document.getElementById("ten_mau").value;
-//   vl= document.getElementById("r").textContent;
-//   data=[name,"r=" +vl]
-// }
+function save_bun(){
+  var name,vl,str_mau
+  var i,j
+  str_mau="<option selected disabled>tên mẫu</option>"
+  name = document.getElementById("ten_mau").value;
+  vl= document.getElementById("r").textContent;
+  data_mau[name]=vl
+  console.log(data_mau)
+  for (i=1;i<4;i++){
+      for (j in data_mau){
+        str_mau=str_mau +'<option value="'+data_mau[j]+'">'+j+'</option>'
+        document.getElementById("mau" +i).innerHTML= str_mau
+      }
+  }
+
+}
 
 // function save_note(){
 //   var name,vl
