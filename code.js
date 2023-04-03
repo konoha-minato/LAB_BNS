@@ -160,9 +160,13 @@ function chia_mau(num) {
 
 function chia_bun(num) {
   var gam,r;
-  var i,j
-  if (num==""){num=7}
-  for (j=1;j<=num;j++){
+  var i,j,min
+  min=num
+  if (num==""){
+    min=1
+    num=7
+  }
+  for (j=min;j<=num;j++){
     gam = document.getElementById("gam"+j).value;
     console.log(gam)
     
