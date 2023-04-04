@@ -168,7 +168,7 @@
   
   </div>
   <div id="phantich" class="tabs">
-    <table  style="width:100%; margin-top: 5px;">
+    <table style="width:100%; margin-top: 5px;">
       <tr>
         <td><a style="color:red;font-size: 50pt;">NaOH</a></td>
         <td><input style="width:max-content" class="f_size_input" type="number" maxlength="20" id="naoh" placeholder="naoh"></td>
@@ -234,7 +234,7 @@
     </p> 
   </div>
   <div id="note" class="tabs">
-    <table style="font-size: 30pt; padding-top: 10px;">
+    <table id= "table_gam" style="font-size: 30pt; padding-top: 10px;">
         <colgroup width="10%"> 
         <colgroup width="20%"> 
         <colgroup width="20%"> 
@@ -242,126 +242,26 @@
       <tr>
         <td></td>
         <td>
-          <select class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="text" maxlength="20" id="mau1" onclick="chia_bun()">
+          <select class="f_size_tronmau" type="text" maxlength="20" id="mau1" onclick="set_nd(1)">
             <option selected disabled>tên mẫu</option>
           </select>
         </td>
         <td>
-          <select class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="text" maxlength="20" id="mau2" onclick="chia_bun()">
+          <select class="f_size_tronmau" type="text" maxlength="20" id="mau2" onclick="set_nd(2)">
             <option selected disabled>tên mẫu</option>
           </select>
         </td>
         <td>
-          <select class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="text" maxlength="20" id="mau3" onclick="chia_bun()">
+          <select class="f_size_tronmau" type="text" maxlength="20" id="mau3" onclick="set_nd(3)">
             <option selected disabled>tên mẫu</option>
           </select>
         </td>
       </tr>
         <td>Rắn (%)<br>M_bùn(g)</td>
-        <td><input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="text" maxlength="20" id="r1" value="40" onchange="chia_mau(1)"></td>
-        <td><input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="text" maxlength="20" id="r2" value="40" onchange="chia_mau(2)"></td>
-        <td><input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="text" maxlength="20" id="r3" value="40" onchange="chia_mau(3)"></td>
+        <td><input class="f_size_tronmau" type="text" maxlength="20" id="r1" value="40" onchange="chia_mau(1)"></td>
+        <td><input class="f_size_tronmau" type="text" maxlength="20" id="r2" value="40" onchange="chia_mau(2)"></td>
+        <td><input class="f_size_tronmau" type="text" maxlength="20" id="r3" value="40" onchange="chia_mau(3)"></td>
       </tr>
-
-      <tr> 
-        <td>
-          <input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="number" value="350" id="gam1" onchange="chia_bun(1)" >
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g1-1" >260</label>
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g1-2" >260</label>
-        </td>      
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g1-3" >260</label>
-        </td>      
-      </tr>
-      <tr> 
-        <td>
-          <input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="number" value="300" id="gam2" onchange="chia_bun(2)">
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g2-1" >260</label>
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g2-2" >260</label>
-        </td>      
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g2-3" >260</label>
-        </td>      
-      </tr>
-      <tr> 
-        <td>
-          <input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="number" value="175" id="gam3" onchange="chia_bun(3)">
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g3-1" >260</label>
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g3-2" >260</label>
-        </td>      
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g3-3" >260</label>
-        </td>      
-      </tr>
-      <tr> 
-        <td>
-          <input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="number" value="150" id="gam4" onchange="chia_bun(4)">
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g4-1" >260</label>
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g4-2" >260</label>
-        </td>      
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g4-3" >260</label>
-        </td>      
-      </tr>
-      <tr> 
-        <td>
-          <input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="number" value="117" id="gam5" onchange="chia_bun(5)">
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g5-1" >260</label>
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g5-2" >260</label>
-        </td>      
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g5-3" >260</label>
-        </td>      
-      </tr>
-      <tr> 
-        <td>
-          <input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="number" value="130" id="gam6" onchange="chia_bun(6)">
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g6-1" >260</label>
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g6-2" >260</label>
-        </td>      
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g6-3" >260</label>
-        </td>      
-      </tr>
-      <tr> 
-        <td>
-          <input class="f_size_tronmau" style="font-size:2em; font-weight: bold;" type="number" value="87" id="gam7" onchange="chia_bun(7)">
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g7-1" >260</label>
-        </td>
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g7-2" >260</label>
-        </td>      
-        <td>
-          <label class="f_size_tronmau" style="font-size:2em; font-weight: bold;width: 60%;" type="number"  id="g7-3" >260</label>
-        </td>      
-      </tr>
-
     </table>
     </div>
   <script src="code.js"></script>

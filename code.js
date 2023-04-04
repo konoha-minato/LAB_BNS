@@ -5,7 +5,20 @@ var k_hso,k_naoh
 var data_mau={}
 set_mau_g()
 chiphi_sx()
-
+//set row bun
+var ar_gam=[350,300,260,175,150,130,117,100,87]
+{
+  var table = document.getElementById("table_gam");
+  var row,i
+  for (i=0;i<ar_gam.length;i++){
+  var row = table.insertRow(-1);
+  row.innerHTML=
+  '<td><input class="f_size_tronmau" type="number" value="'+ar_gam[i]+'" id="gam'+i+'" onchange="chia_bun('+(i+1)+')"></td>'+
+  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-1" >260</label></td>'+
+  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-2" >260</label></td>'+
+  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-3" >260</label></td>'
+  }
+}
 document.getElementById("defaultOpen").click();
 document.getElementById("naoh").addEventListener("keyup",function(e){
   if (e.keyCode == 13) {
@@ -148,9 +161,16 @@ function set_tab(name_tab) {
   evt.currentTarget.className += " active";
 }
 
+function set_nd(num) {
+  // console.log(data_mau)
+  document.getElementById("r"+num).value=document.getElementById("mau"+num).value
+  // console.log(document.getElementById("mau"+num).value)
+  chia_mau(num)
+}
+
 function chia_mau(num) {
   var j
-  for (j=1;j<=7;j++){
+  for (j=1;j<=ar_gam.length+1;j++){
     gam = document.getElementById("gam"+j).value;
     r= parseInt(document.getElementById("r"+num).value)
     document.getElementById("g"+j+"-"+num).innerHTML=((gam/r)*100).toFixed(0)
@@ -160,20 +180,19 @@ function chia_mau(num) {
 
 function chia_bun(num) {
   var gam,r;
-  var i,j,min
-  min=num
-  if (num==""){
-    min=1
-    num=7
-  }
-  for (j=min;j<=num;j++){
+  var i,j
+  if (num==""){num=ar_gam.length+1}
+  console.log(num)
+  for (j=1;j<=num;j++){
     gam = document.getElementById("gam"+j).value;
-    console.log(gam)
+    // console.log(gam)
     
     for (i = 1; i < 4; i++) {
       r= parseInt(document.getElementById("r"+i).value)
       // console.log(d)
+      if (r!=""){
       document.getElementById("g"+j+"-"+i).innerHTML=((gam/r)*100).toFixed(0)    
+      }
     }
   }
 }
@@ -198,12 +217,15 @@ function save_bun(){
   name = document.getElementById("ten_mau").value;
   vl= document.getElementById("r").textContent;
   data_mau[name]=vl
-  console.log(data_mau)
+  // console.log(data_mau)
   for (i=1;i<4;i++){
       for (j in data_mau){
         str_mau=str_mau +'<option value="'+data_mau[j]+'">'+j+'</option>'
         document.getElementById("mau" +i).innerHTML= str_mau
       }
+      document.getElementById("mau" +i).value= Object.values(data_mau)[i-1]
+      str_mau="<option selected disabled>tên mẫu</option>"
+      set_nd(i)
   }
 
 }
