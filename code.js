@@ -20,13 +20,30 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
   '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-3" >0</label></td>'
   }
 
+  //cấp hạt
+  var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
+  var table = document.getElementById("phantich");
+  var str_data="",i
+  for (i=0;i<ar_caphat.length;i++){
+  // var row = table.insertRow(-1);
+    str_data=str_data+
+    '<p>'+
+      '<input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_'+(i+1)+'" value="'+ar_caphat[i]+'">
+      '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_'+(i+1)+'" placeholder="âm">
+      '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_'+(i+1)+'" placeholder="tổng">
+      '<label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_'+(i+1)+'" onclick="set_caphat('+(i+1)+')" >res</label>'
+    '</p>'
+  }
+  // console.log(str_p2o5)
+  table.innerHTML= table.innerHTML +str_data
+
   //phân tích
   var ar_p205=['TC1_2','TC3_4','TT1','TT2','BV1','BV2','TG1','TG2']
   var table = document.getElementById("phantich");
-  var str_p2o5="",i
+  str_data="",i
   for (i=0;i<ar_p205.length;i++){
   // var row = table.insertRow(-1);
-    str_p2o5=str_p2o5+
+    str_data=str_data+
     '<p>'+
     '<input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_'+(i+1)+'" value="'+ar_p205[i]+'">'+
     '<input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_'+(i+1)+'" placeholder="naoh">'+
@@ -34,8 +51,8 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
     '<label class="f_size_phantich_res" id="pt_res_'+(i+1)+'" onclick="set_pt('+(i+1)+')">res</label>'+
     '</p>'
   }
-  console.log(str_p2o5)
-  table.innerHTML= table.innerHTML +str_p2o5
+  // console.log(str_p2o5)
+  table.innerHTML= table.innerHTML +str_data
 
 }
 
