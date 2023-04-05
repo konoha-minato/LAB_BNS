@@ -23,7 +23,7 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
   //phân tích
   var ar_p205=['TC1_2','TC3_4','TT1','TT2','BV1','BV2','TG1','TG2']
   var table = document.getElementById("phantich");
-  var str_p2o5,i
+  var str_p2o5='',i
   for (i=0;i<ar_p205.length;i++){
   // var row = table.insertRow(-1);
     str_p2o5=str_p2o5+
