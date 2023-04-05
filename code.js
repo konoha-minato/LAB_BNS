@@ -184,7 +184,7 @@ function chia_bun(num) {
   var gam,r;
   var i,j
   if (num==""){num=ar_gam.length+1}
-  console.log(num)
+  // console.log(num)
   for (j=1;j<=num;j++){
     gam = document.getElementById("gam"+j).value;
     // console.log(gam)
