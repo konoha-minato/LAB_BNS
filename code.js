@@ -163,7 +163,7 @@ function set_tab(name_tab) {
 
 function set_nd(num) {
   
-  console.log(data_mau)
+  // console.log(data_mau)
   document.getElementById("r"+num).value=document.getElementById("mau"+num).value
   // console.log(document.getElementById("mau"+num).value)
   chia_mau(num)
@@ -174,10 +174,9 @@ function chia_mau(num) {
   for (j=1;j<=ar_gam.length+1;j++){
     gam = document.getElementById("gam"+j).value;
     // console.log(gam)
-    r= document.getElementById("mau"+num).value    // console.log((gam*100)/r)
-    
+    r= document.getElementById("mau"+num).value    // console.log((gam*100)/r)    
     document.getElementById("g"+j+"-"+num).innerHTML=((gam*100)/r).toFixed(0)
-    console.log(gam+"_"+r+"_"+(gam*100)/r)
+    // console.log(gam+"_"+r+"_"+(gam*100)/r)
   }
 }
 
