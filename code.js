@@ -162,7 +162,8 @@ function set_tab(name_tab) {
 }
 
 function set_nd(num) {
-  // console.log(data_mau)
+  
+  console.log(data_mau)
   document.getElementById("r"+num).value=document.getElementById("mau"+num).value
   // console.log(document.getElementById("mau"+num).value)
   chia_mau(num)
