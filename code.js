@@ -185,13 +185,15 @@ function chia_bun(num) {
   console.log(num)
   for (j=1;j<=num;j++){
     gam = document.getElementById("gam"+j).value;
-    // console.log(gam)
+    console.log(gam)
     
     for (i = 1; i < 4; i++) {
       r= parseInt(document.getElementById("r"+i).value)
-      // console.log(d)
       if (r!=""){
-      document.getElementById("g"+j+"-"+i).innerHTML=((gam*100)/r).toFixed(0)    
+      console.log(r)
+      document.getElementById("g"+j+"-"+i).innerHTML=((gam*100)/r).toFixed(0)
+      console.log((gam*100)/r)
+       s
       }
     }
   }
@@ -229,11 +231,4 @@ function save_bun(){
   }
 
 }
-
-// function save_note(){
-//   var name,vl
-//   name = document.getElementById("note_sub").value;
-//   vl= document.getElementById("note_content").textContent;
-//   data=[name,vl]
-// }
 
