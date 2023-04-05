@@ -169,7 +169,7 @@ function set_nd(num) {
 }
 
 function chia_mau(num) {
-  var j
+  var j,gam,r
   for (j=1;j<=ar_gam.length+1;j++){
     gam = document.getElementById("gam"+j).value;
     r= parseInt(document.getElementById("r"+num).value)
