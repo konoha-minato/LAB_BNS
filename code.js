@@ -13,7 +13,7 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
   for (i=0;i<ar_gam.length;i++){
   var row = table.insertRow(-1);
   row.innerHTML=
-  '<td><input class="f_size_tronmau" type="number" value="'+ar_gam[i]+'" id="gam'+i+'" onchange="chia_bun('+(i+1)+')"></td>'+
+  '<td><input class="f_size_tronmau" type="number" value="'+ar_gam[i]+'" id="gam'+(i+1)+'" onchange="chia_bun('+(i+1)+')"></td>'+
   '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-1" >260</label></td>'+
   '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-2" >260</label></td>'+
   '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-3" >260</label></td>'
