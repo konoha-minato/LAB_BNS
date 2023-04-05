@@ -28,7 +28,7 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
   // var row = table.insertRow(-1);
     str_p2o5=str_p2o5+
     '<p>'+
-    '<input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_'+(i+1)+'" placeholder="TN1">'
+    '<input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_'+(i+1)+'" placeholder="'+ar_p205[i]+'">'
     '<input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_'+(i+1)+'" placeholder="naoh">'
     '<input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_'+(i+1)+'" placeholder="hso">'
     '<label class="f_size_phantich_res" id="pt_res_'+(i+1)+'" onclick="set_pt('+(i+1)+')">res</label>'
