@@ -173,7 +173,7 @@ function chia_mau(num) {
   for (j=1;j<=ar_gam.length+1;j++){
     gam = document.getElementById("gam"+j).value;
     r= parseInt(document.getElementById("r"+num).value)
-    document.getElementById("g"+j+"-"+num).innerHTML=((gam/r)*100).toFixed(0)
+    document.getElementById("g"+j+"-"+num).innerHTML=(gam*100/r).toFixed(0)
     // console.log(gam)    
   }
 }
@@ -191,7 +191,7 @@ function chia_bun(num) {
       r= parseInt(document.getElementById("r"+i).value)
       // console.log(d)
       if (r!=""){
-      document.getElementById("g"+j+"-"+i).innerHTML=((gam/r)*100).toFixed(0)    
+      document.getElementById("g"+j+"-"+i).innerHTML=(gam*100/r).toFixed(0)    
       }
     }
   }
