@@ -190,7 +190,7 @@ function chia_bun(num) {
     // console.log(gam)
     
     for (i = 1; i < 4; i++) {
-      r= parseFloat(document.getElementById("r"+i).value)
+      r= document.getElementById("mau"+i).value
       if (r!=""){
       // console.log(r)
       document.getElementById("g"+j+"-"+i).innerHTML=((gam*100)/r).toFixed(0)
@@ -200,19 +200,6 @@ function chia_bun(num) {
     }
   }
 }
-
-//save to gsheet
-
-// function save_thuoc(){
-//   var vl1,vl2,vl3,vl4,vl5
-//   vl1 = document.getElementById("ten_tn").value;
-//   vl2 = document.getElementById("ttl_gt").value;
-//   vl3 = document.getElementById("xut_gt").value;
-//   vl4 = document.getElementById("tth_gt").value;
-//   vl5 = document.getElementById("des_tn").value;
-//   var res=[vl2,vl3,vl4].join("_")
-//   data=[vl1,vl5,res]
-// }
 
 function save_bun(){
   var name,vl,str_mau
