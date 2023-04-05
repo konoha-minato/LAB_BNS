@@ -173,7 +173,7 @@ function chia_mau(num) {
   for (j=1;j<=ar_gam.length+1;j++){
     gam = document.getElementById("gam"+j).value;
     // console.log(gam)
-    r= parseInt(document.getElementById("r"+num).value)
+    r= parseFloat(document.getElementById("r"+num).value)
     // console.log((gam*100)/r)
     
     document.getElementById("g"+j+"-"+num).innerHTML=((gam*100)/r).toFixed(0)
@@ -191,7 +191,7 @@ function chia_bun(num) {
     // console.log(gam)
     
     for (i = 1; i < 4; i++) {
-      r= parseInt(document.getElementById("r"+i).value)
+      r= parseFloat(document.getElementById("r"+i).value)
       if (r!=""){
       // console.log(r)
       document.getElementById("g"+j+"-"+i).innerHTML=((gam*100)/r).toFixed(0)
