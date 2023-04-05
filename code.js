@@ -34,11 +34,8 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
     '<label class="f_size_phantich_res" id="pt_res_'+(i+1)+'" onclick="set_pt('+(i+1)+')">res</label>'+
     '</p>'
   }
+  console.log(str_p2o5)
   table.innerHTML= table.innerHTML +str_p2o5
-
-  
-
-
 
 }
 document.getElementById("defaultOpen").click();
