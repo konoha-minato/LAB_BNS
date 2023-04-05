@@ -22,7 +22,7 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
 
   //cấp hạt
   var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
-  var table = document.getElementById("phantich");
+  var table = document.getElementById("caphat");
   var str_data="",i
   for (i=0;i<ar_caphat.length;i++){
   // var row = table.insertRow(-1);
