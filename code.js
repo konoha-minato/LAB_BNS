@@ -172,9 +172,9 @@ function chia_mau(num) {
   var j,gam,r
   for (j=1;j<=ar_gam.length+1;j++){
     gam = document.getElementById("gam"+j).value;
-    console.log(gam)
+    // console.log(gam)
     r= parseInt(document.getElementById("r"+num).value)
-    console.log((gam*100)/r)
+    // console.log((gam*100)/r)
     
     document.getElementById("g"+j+"-"+num).innerHTML=((gam*100)/r).toFixed(0)
     console.log(gam+"_"+r+"_"+(gam*100)/r)
