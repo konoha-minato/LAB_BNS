@@ -8,18 +8,6 @@ chiphi_sx()
 //setup start
 var ar_gam=[350,300,260,175,150,130,117,100,87]
 {
-  //chia bùn
-  var table = document.getElementById("table_gam");
-  var row,i
-  for (i=0;i<ar_gam.length;i++){
-  var row = table.insertRow(-1);
-  row.innerHTML=
-  '<td><input class="f_size_tronmau" type="number" value="'+ar_gam[i]+'" id="gam'+(i+1)+'" onchange="chia_bun('+(i+1)+')"></td>'+
-  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-1" >0</label></td>'+
-  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-2" >0</label></td>'+
-  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-3" >0</label></td>'
-  }
-
   //cấp hạt
   var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
   var table = document.getElementById("caphat");
@@ -31,7 +19,7 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
       '<input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_'+(i+1)+'" value="'+ar_caphat[i]+'">'+
       '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_'+(i+1)+'" placeholder="âm">'+
       '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_'+(i+1)+'" placeholder="tổng">'+
-      '<label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_'+(i+1)+'" onclick="set_caphat('+(i+1)+')" >res</label>'
+      '<label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_'+(i+1)+'" onclick="set_caphat('+(i+1)+')" >res</label>'+
     '</p>'
   }
   // console.log(str_p2o5)
@@ -53,6 +41,19 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
   }
   // console.log(str_p2o5)
   table.innerHTML= table.innerHTML +str_data
+  
+  //chia bùn
+  var table = document.getElementById("table_gam");
+  var row,i
+  for (i=0;i<ar_gam.length;i++){
+  var row = table.insertRow(-1);
+  row.innerHTML=
+  '<td><input class="f_size_tronmau" type="number" value="'+ar_gam[i]+'" id="gam'+(i+1)+'" onchange="chia_bun('+(i+1)+')"></td>'+
+  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-1" >0</label></td>'+
+  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-2" >0</label></td>'+
+  '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-3" >0</label></td>'
+  }
+
 
 }
 
