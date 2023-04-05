@@ -5,9 +5,10 @@ var k_hso,k_naoh
 var data_mau={}
 set_mau_g()
 chiphi_sx()
-//set row bun
+//setup start
 var ar_gam=[350,300,260,175,150,130,117,100,87]
 {
+  //chia bùn
   var table = document.getElementById("table_gam");
   var row,i
   for (i=0;i<ar_gam.length;i++){
@@ -18,6 +19,27 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
   '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-2" >0</label></td>'+
   '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-3" >0</label></td>'
   }
+
+  //phân tích
+  var ar_p205=['TC1_2','TC3_4','TT1','TT2','BV1','BV2','TG1','TG2']
+  var table = document.getElementById("phantich");
+  var str_p2o5,i
+  for (i=0;i<ar_p205.length;i++){
+  // var row = table.insertRow(-1);
+    str_p2o5=str_p2o5+
+    '<p>'+
+    '<input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_'+(i+1)+'" placeholder="TN1">'
+    '<input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_'+(i+1)+'" placeholder="naoh">'
+    '<input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_'+(i+1)+'" placeholder="hso">'
+    '<label class="f_size_phantich_res" id="pt_res_'+(i+1)+'" onclick="set_pt('+(i+1)+')">res</label>'
+    '</p>'
+  }
+  table.innerHTML=str_p2o5
+
+  
+
+
+
 }
 document.getElementById("defaultOpen").click();
 document.getElementById("naoh").addEventListener("keyup",function(e){
