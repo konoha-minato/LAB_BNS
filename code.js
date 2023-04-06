@@ -185,6 +185,7 @@ function cptn(){
     document.getElementById("tth_gt").value =300
     chiphi_thuoc(mau)
 }
+
 function set_tab(name_tab) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabs");
@@ -196,7 +197,7 @@ function set_tab(name_tab) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(name_tab).style.display = "block";
-  evt.currentTarget.className += " active";
+  // evt.currentTarget.className += " active";
 }
 
 function set_nd(num) {
