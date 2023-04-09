@@ -110,7 +110,7 @@
     width: fit-content;
 }
 .head{
-    max-height: 300px;
+    max-height: 250px;
     display: flex;
     overflow-x: auto;
 }
