@@ -5,113 +5,167 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body style="font-size:15pt; font-family: Verdana;float:inline-start; float: left;">
-  <div id="menu" style="float:none" >
-    <button class="tb1" onclick="set_tab('dodem')" >Lưu lượng</button>
-    <button class="tb1" onclick="set_tab('hoachat')" id="defaultOpen" >Hoá chất</button>
-    <button class="tb1" onclick="set_tab('caphat')">Cấp hạt</button>
-    <button class="tb1" onclick="set_tab('phantich')">Phân tích</button>
-    <button class="tb1" onclick="set_tab('note')" >Chia mẫu</button>
+  <div class="head" id="menu">
+    <div class="item"><button class="tb1" onclick="set_tab('dodem')" >Lưu lượng</button></div>
+    <div class="item"><button class="tb1" onclick="set_tab('hoachat')"  id="defaultOpen" >Hoá chất</button></div>
+    <div class="item"><button class="tb1" onclick="set_tab('caphat')">Cấp hạt</button></div> 
+    <div class="item"><button class="tb1" onclick="set_tab('phantich')">Phân tích</button></div>
+    <div class="item"><button class="tb1" onclick="set_tab('note')" >Chia mẫu</button></div>
   </div>
   <div id="hoachat" class="tabs" >
-    <div class="do-dem" style="float: none;">
-      <div style="padding-top: 10px;">
-          <a style="color:red;">Tên mẫu </a><input class="f_size_input" type="text" maxlength="20" id="ten_mau" placeholder="tên mẫu">
-          <button style="background-color:red; border-radius:10px; font-size: 80px;" onclick="save_bun()" >LƯU DỮ LIỆU</button>
+      <div class="do-dem" style="float: none;">
+        <div style="padding-top: 10px;">
+            <a style="color:red;">Tên mẫu </a><input class="f_size_input" type="text" maxlength="20" id="ten_mau" placeholder="tên mẫu">
+            <button style="background-color:red; border-radius:10px; font-size: 80px;" onclick="save_bun()" >LƯU DỮ LIỆU</button>
+        </div>
+        <div style="padding-top: 10px;">
+            <a style="color:red;">Mẫu (g) </a><input class="f_size_input" type="number" max="1000" id="mau_g" value="260" onchange="set_mau_g()">
+            <a style="color:red;">D= </a><input class="f_size_input" type="number" max="10" value="2.6" id="d" onchange="set_mau_g()">
+        </div>
+        <table style="padding-top: 10px;">
+            <tr>
+                <td>M (g)</td>
+                <td><input class="f_size_lb" style="font-size:2em; font-weight: bold;width: 60%;" type="number" min="1" max="3000" value="2000" id="m_g" onchange="set_mau_g()"></td>
+                <td>Rắn (%)</td>
+                <td><a class="f_size_lb" id="r"></a></td>
+            </tr>
+            <tr>
+                <td>V (ml)</td>
+                <td><input class="f_size_lb" type="number" min="1" max="3000" id="v_ml" value="1000"></td>
+                <td>Bùn cân (g)</td>
+                <td><a class="f_size_lb" style="color: red;font-weight: bold;" id="bun_can"></a></td>
+            </tr>
+            
+            <tr>
+                <td>M bình (g)</td>
+                <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_binh" value="700" onchange="set_mau_g()" ></td>
+                <td>Bùn (cả bì)</td>
+                <td><a class="f_size_lb"   id="bun_can3"></a></td>
+            </tr>
+            <tr>
+                <td>M bì (g)</td>
+                <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_bi" value="70" onchange="set_mau_g()" ></td>
+            </tr>
+        </table>
       </div>
-      <div style="padding-top: 10px;">
-          <a style="color:red;">Mẫu (g) </a><input class="f_size_input" type="number" max="1000" id="mau_g" value="260" onchange="set_mau_g()">
-          <a style="color:red;">D= </a><input class="f_size_input" type="number" max="10" value="2.6" id="d" onchange="set_mau_g()">
+      <div class="do-dem">
+        <table>
+            <colgroup width="30%"> 
+            <colgroup width="22%"> 
+            <colgroup width="22%"> 
+            <colgroup width="22%"> 
+            <tr>
+                <td colspan="4" class="sub" onclick="save_thuoc()">Lưu lượng thuốc</td>
+            </tr>
+            <tr>
+              <td><input style="width: 100%; font-size: 40pt;" type="text" maxlength="5" placeholder="tên tn" id="ten_tn"></td>
+              <td colspan="3"><input class="f_size_lb" style="width: 100%;" type="text" maxlength="100" placeholder="des tn" id="des_tn"></td>
+            </tr>
+            <tr>
+              <td >
+                <a id="tth_mode">TTH SX</a>
+                <input class="f_size_pha" type="checkbox" id="tth" onclick="check()">
+              </td>
+              <td style="background-color:yellow; border: 1px;">TTL</td>
+              <td style="background-color:yellow;border: 1px;">XÚT</td>
+              <td style="background-color:yellow;border: 1px;">TTH</td>
+            </tr>
+            <tr>
+              <td style="background-color:greenyellow;" onclick="cptn()">Chi  phí (g/T)</td> 
+              <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="3000" value="500" id="ttl_gt" onchange="set_mau_g()"></td>
+              <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="3000" value="200" id="xut_gt" onchange="set_mau_g()"></td>
+              <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="3000" value="300" id="tth_gt" onchange="set_mau_g()"></td>
+            </tr>
+            <tr>
+              <td>Chi phí (ml)</td>
+              <td class="f_size_chiphi" id="ttl_ml"></td>
+              <td class="f_size_chiphi" id="xut_ml"></td>
+              <td class="f_size_chiphi" id="tth_ml"></td>
+            </tr>
+            <tr>
+              <td>Tỉ lệ (%)</td>
+              <td class="f_size_chiphi" id="ttl_r">5</td>
+              <td class="f_size_chiphi" id="xut_r">2</td>
+              <td class="f_size_chiphi" id="tth_r">1.2</td>
+            </tr>
+            <tr>
+              <td style="background-color:aqua;" onclick="mode_sx()">Năng suất</td>
+              <td class="f_size_chiphi" id="ttl_sx"></td>
+              <td class="f_size_chiphi" id="xut_sx"></td>
+              <td class="f_size_chiphi" id="tth_sx"></td>
+            </tr>
+            <tr>
+              <td><input style="width: 50%; font-size: 1.3em;" type="number" min="1" max="500" value="155" id="ns" onchange="chiphi_sx()"> (T/h)</td>
+              <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="1200" id="ttl_ll" onchange="chiphi_sx()"></td>
+              <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="1000" id="xut_ll" onchange="chiphi_sx()"></td>
+              <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="4000" value="3000" id="tth_ll" onchange="chiphi_sx()"></td>
+            </tr>
+        </table>
       </div>
-      <table style="padding-top: 10px;">
-          <tr>
-              <td>M (g)</td>
-              <td><input class="f_size_lb" style="font-size:2em; font-weight: bold;width: 60%;" type="number" min="1" max="3000" value="2000" id="m_g" onchange="set_mau_g()"></td>
-              <td>Rắn (%)</td>
-              <td><a class="f_size_lb" id="r"></a></td>
-          </tr>
-          <tr>
-              <td>V (ml)</td>
-              <td><input class="f_size_lb" type="number" min="1" max="3000" id="v_ml" value="1000"></td>
-              <td>Bùn cân (g)</td>
-              <td><a class="f_size_lb" style="color: red;font-weight: bold;" id="bun_can"></a></td>
-          </tr>
-          <tr>
-              <td>M bình (g)</td>
-              <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_binh" value="700" onchange="set_mau_g()" ></td>
-              <td>Bùn (cả bì)</td>
-              <td><a class="f_size_lb"   id="bun_can3"></a></td>
-          </tr>
-          <tr>
-              <td>M bì (g)</td>
-              <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_bi" value="70" onchange="set_mau_g()" ></td>
-          </tr>
-      </table>
-    </div>
-    <div class="do-dem">
-      <table>
-          <colgroup width="30%"> 
-          <colgroup width="22%"> 
-          <colgroup width="22%"> 
-          <colgroup width="22%"> 
-          <tr>
-              <td colspan="4" class="sub" onclick="save_thuoc()">Lưu lượng thuốc</td>
-          </tr>
-          <tr>
-            <td><input style="width: 100%; font-size: 40pt;" type="text" maxlength="5" placeholder="tên tn" id="ten_tn"></td>
-            <td colspan="3"><input class="f_size_lb" style="width: 100%;" type="text" maxlength="100" placeholder="des tn" id="des_tn"></td>
-          </tr>
-          <tr>
-            <td >
-              <a id="tth_mode">TTH SX</a>
-              <input class="f_size_pha" type="checkbox" id="tth" onclick="check()">
-            </td>
-            <td style="background-color:yellow; border: 1px;">TTL</td>
-            <td style="background-color:yellow;border: 1px;">XÚT</td>
-            <td style="background-color:yellow;border: 1px;">TTH</td>
-          </tr>
-          <tr>
-            <td style="background-color:greenyellow;" onclick="cptn()">Chi  phí (g/T)</td> 
-            <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="3000" value="500" id="ttl_gt" onchange="set_mau_g()"></td>
-            <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="3000" value="200" id="xut_gt" onchange="set_mau_g()"></td>
-            <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="3000" value="300" id="tth_gt" onchange="set_mau_g()"></td>
-          </tr>
-          <tr>
-            <td>Chi phí (ml)</td>
-            <td class="f_size_chiphi" id="ttl_ml"></td>
-            <td class="f_size_chiphi" id="xut_ml"></td>
-            <td class="f_size_chiphi" id="tth_ml"></td>
-          </tr>
-          <tr>
-            <td>Tỉ lệ (%)</td>
-            <td class="f_size_chiphi" id="ttl_r">5</td>
-            <td class="f_size_chiphi" id="xut_r">2</td>
-            <td class="f_size_chiphi" id="tth_r">1.2</td>
-          </tr>
-          <tr>
-            <td style="background-color:aqua;" onclick="mode_sx()">Năng suất</td>
-            <td class="f_size_chiphi" id="ttl_sx"></td>
-            <td class="f_size_chiphi" id="xut_sx"></td>
-            <td class="f_size_chiphi" id="tth_sx"></td>
-          </tr>
-          <tr>
-            <td><input style="width: 50%; font-size: 1.3em;" type="number" min="1" max="500" value="155" id="ns" onchange="chiphi_sx()"> (T/h)</td>
-            <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="1200" id="ttl_ll" onchange="chiphi_sx()"></td>
-            <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="1000" id="xut_ll" onchange="chiphi_sx()"></td>
-            <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="4000" value="3000" id="tth_ll" onchange="chiphi_sx()"></td>
-          </tr>
-      </table>
-    </div>
-      <!-- <div class="do-dem">
-        <iframe src="https://vnexpress.net/" alowfullscreen="true" height="300" title="VIEW"></iframe>
-      </div> -->
   </div>
   <div id="caphat" class="tabs">
     <p>
       <label style="color:red;font-size: 50pt;" onclick="save_ch()">Giờ </label>
-      <input style="width:max-content" class="f_size_input" type="text" maxlength="20" id="time" placeholder="giờ lấy">
+      <input style="width:max-content" class="f_size_input" type="text" maxlength="20" id="time" placeholder="giờ lấy"></p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_1" value="Nghiền 1">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_1" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_1" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_1" onclick="set_caphat(1)" >res</label>
     </p>
-    <!-- list sp nghiền -->
-
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_2" value="Nghiền 2">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_2" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_2" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_2" onclick="set_caphat(2)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_3" value="PC đơn">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_3" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_3" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_3" onclick="set_caphat(3)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_4" value="PC kép">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_4" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_4" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_4" onclick="set_caphat(4)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_5" value="tràn 1">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_5" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_5" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_5" onclick="set_caphat(5)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_6" value="tràn 2">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_6" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_6" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_6" onclick="set_caphat(6)" >res</label>
+    </p>
+    <p>
+      <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_7" value="tràn 3">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_7" placeholder="âm">
+      <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_7" placeholder="tổng">
+      <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_7" onclick="set_caphat(7)" >res</label>
+    </p>
+    <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_8" value="cát 1">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_8" placeholder="âm">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_8" placeholder="tổng">
+    <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_8" onclick="set_caphat(8)" >res</label>
+  </p>
+  <p>
+    <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_9" value="cát 2">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_9" placeholder="âm">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_9" placeholder="tổng">
+    <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_9" onclick="set_caphat(9)" >res</label>
+  </p>
+  <p>
+    <input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_10" value="cát 3">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_10" placeholder="âm">
+    <input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_10" placeholder="tổng">
+    <label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_10" onclick="set_caphat(10)" >res</label>
+  </p>
   
   </div>
   <div id="phantich" class="tabs">
@@ -125,8 +179,60 @@
         <td><input style="width:max-content"class="f_size_input" type="number" maxlength="20" id="hso" placeholder="hso"></td>
       </tr>
     </table>
-    <!-- list sp bọt  -->
-
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_1" placeholder="TN1">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_1" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_1" placeholder="hso" >
+      <label class="f_size_phantich_res" id="pt_res_1" onclick="set_pt(1)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_2" value="TC1_2">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_2" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_2" placeholder="hso" >
+      <label class="f_size_phantich_res" id="pt_res_2" onclick="set_pt(2)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_3" value="TC3_4">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_3" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_3" placeholder="hso" >
+      <label class="f_size_phantich_res" id="pt_res_3" onclick="set_pt(3)">res</label>
+    </p>
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_4" value="TT1">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_4" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_4" placeholder="hso" >
+      <label class="f_size_phantich_res" id="pt_res_4" onclick="set_pt(4)">res</label>
+    </p>
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_5" value="TT2">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_5" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_5" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_5" onclick="set_pt(5)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_6" value="BV1">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_6" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_6" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_6" onclick="set_pt(6)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_7" value="BV2">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_7" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_7" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_7" onclick="set_pt(7)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_8" value="TG1">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_8" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_8" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_8" onclick="set_pt(8)">res</label>
+    </p> 
+    <p>
+      <input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_8" value="TG2">
+      <input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_8" placeholder="naoh">
+      <input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_8" placeholder="hso">
+      <label class="f_size_phantich_res" id="pt_res_8" onclick="set_pt(8)">res</label>
+    </p> 
   </div>
   <div id="note" class="tabs">
     <table id= "table_gam" style="font-size: 30pt; padding-top: 10px;">
@@ -158,8 +264,6 @@
         <td><input class="f_size_tronmau" type="text" maxlength="20" id="r3" value="40" onchange="chia_mau(3)"></td>
       </tr>
     </table>
-    <!-- list chia bùn  -->
-
     </div>
   <script src="code.js"></script>
 </body>

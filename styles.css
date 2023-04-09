@@ -11,14 +11,10 @@
   float:left;
 }
 .tb1{
-    background-color: aqua;
+    background-color: chartreuse;
     border-color: brown;
-    width: fit-content;
-    float: left;
     margin-left: 10px;
     font-size:30pt;
-    width:200px;
-    height:80px;
 }
 .tb2{
     margin-left: 20px;
@@ -113,9 +109,19 @@
     font-weight: bold;
     width: fit-content;
 }
-div.scroll{
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-    overflow-x: scroll;
+.head{
+    max-height: 100px;
+    display: flex;
+    overflow-x: auto;
+}
+
+.head::-webkit-scrollbar{
+    width: 0;
+}
+.head .item{
+    min-width: 150px;
+    height: 100;
+    padding: 10px;
+    text-align: center;
+    background-color: aqua;
 }
