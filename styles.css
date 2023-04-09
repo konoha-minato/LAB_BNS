@@ -110,7 +110,7 @@
     width: fit-content;
 }
 .head{
-    max-height: 100px;
+    max-height: 150px;
     display: flex;
     overflow-x: auto;
 }
@@ -119,7 +119,7 @@
     width: 0;
 }
 .head .item{
-    min-width: 300px;
+    min-width: 100px;
     height: 100;
     padding: 10px;
     text-align: center;
