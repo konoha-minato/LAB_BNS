@@ -260,9 +260,11 @@ function chia_bun(num) {
 
 function add_tn(){
   var table = document.getElementById("table_hc");
-  var row,ar_cp=[],ten_thuoc
+  var row,ar_cp=[],ten_thuoc,r_tron
   var row = table.insertRow(-1);
   ten_thuoc=document.getElementById("loai_thuoc").value.toUpperCase();
+  r_tron=document.getElementById("r_tron").value.toUpperCase();
+
   ar_cp.push("TN"+document.getElementById("tn_num").value+"_"+document.getElementById("kl_bun").value +"g")
   ar_cp.push(document.getElementById("ttl_gt").value)
   ar_cp.push(document.getElementById("xut_gt").value)
@@ -273,7 +275,7 @@ function add_tn(){
   ar_cp.push(document.getElementById("tth_r").textContent)
   row.innerHTML=
   '<tr>'+
-    '<th rowspan="2" style=" border-style: groove; border-width: 2px;border-color: brown;" >'+ar_cp[0]+"\n"+ten_thuoc+ '</th>'+
+    '<th rowspan="2" style=" border-style: groove; border-width: 2px;border-color: brown;" >'+ar_cp[0]+"\n"+ten_thuoc+" "+r_tron+'</th>'+
     '<th colspan="3">'+[ar_cp[1],ar_cp[2],ar_cp[3]].join("_")+" | " +ar_cp[7]+"%"+'</th>'+
   '</tr>'
   row = table.insertRow(-1)
