@@ -9,38 +9,38 @@ chiphi_sx()
 var ar_gam=[350,300,260,175,150,130,117,100,87]
 {
   //cấp hạt
-  var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
-  var table = document.getElementById("caphat");
-  var str_data="",i
-  for (i=0;i<ar_caphat.length;i++){
-  // var row = table.insertRow(-1);
-    str_data=str_data+
-    '<p>'+
-      '<input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_'+(i+1)+'" value="'+ar_caphat[i]+'">'+
-      '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_'+(i+1)+'" placeholder="âm">'+
-      '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_'+(i+1)+'" placeholder="tổng">'+
-      '<label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_'+(i+1)+'" onclick="set_caphat('+(i+1)+')" >res</label>'+
-    '</p>'
-  }
-  // console.log(str_p2o5)
-  table.innerHTML= table.innerHTML +str_data
+  // var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
+  // var table = document.getElementById("caphat");
+  // var str_data="",i
+  // for (i=0;i<ar_caphat.length;i++){
+  // // var row = table.insertRow(-1);
+  //   str_data=str_data+
+  //   '<p>'+
+  //     '<input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_'+(i+1)+'" value="'+ar_caphat[i]+'">'+
+  //     '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_'+(i+1)+'" placeholder="âm">'+
+  //     '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_'+(i+1)+'" placeholder="tổng">'+
+  //     '<label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_'+(i+1)+'" onclick="set_caphat('+(i+1)+')" >res</label>'+
+  //   '</p>'
+  // }
+  // // console.log(str_p2o5)
+  // table.innerHTML= table.innerHTML +str_data
 
   //phân tích
-  var ar_p205=['TC1_2','TC3_4','TT1','TT2','BV1','BV2','TG1','TG2']
-  var table = document.getElementById("phantich");
-  str_data="",i
-  for (i=0;i<ar_p205.length;i++){
-  // var row = table.insertRow(-1);
-    str_data=str_data+
-    '<p>'+
-    '<input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_'+(i+1)+'" value="'+ar_p205[i]+'">'+
-    '<input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_'+(i+1)+'" placeholder="naoh">'+
-    '<input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_'+(i+1)+'" placeholder="hso">'+
-    '<label class="f_size_phantich_res" id="pt_res_'+(i+1)+'" onclick="set_pt('+(i+1)+')">res</label>'+
-    '</p>'
-  }
-  // console.log(str_p2o5)
-  table.innerHTML= table.innerHTML +str_data
+  // var ar_p205=['TC1_2','TC3_4','TT1','TT2','BV1','BV2','TG1','TG2']
+  // var table = document.getElementById("phantich");
+  // str_data="",i
+  // for (i=0;i<ar_p205.length;i++){
+  // // var row = table.insertRow(-1);
+  //   str_data=str_data+
+  //   '<p>'+
+  //   '<input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_'+(i+1)+'" value="'+ar_p205[i]+'">'+
+  //   '<input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_'+(i+1)+'" placeholder="naoh">'+
+  //   '<input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_'+(i+1)+'" placeholder="hso">'+
+  //   '<label class="f_size_phantich_res" id="pt_res_'+(i+1)+'" onclick="set_pt('+(i+1)+')">res</label>'+
+  //   '</p>'
+  // }
+  // // console.log(str_p2o5)
+  // table.innerHTML= table.innerHTML +str_data
   
   //chia bùn
   var table = document.getElementById("table_gam");
@@ -53,7 +53,6 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
   '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-2" >0</label></td>'+
   '<td><label class="f_size_tronmau_lb" type="text" id="g'+(i+1)+'-3" >0</label></td>'
   }
-
 
 }
 
@@ -128,7 +127,7 @@ function check(){ //mode tth
     document.getElementById('tth_r').innerHTML = "1.2"
   }
   //tinh thuoc
-  chiphi_thuoc (document.getElementById("mau_g").value)
+  chiphi_thuoc (document.getElementById("kl_bun").value)
 
 }
 
@@ -179,7 +178,7 @@ function mode_sx(){
 }
 function cptn(){
   var mau
-    mau= document.getElementById("mau_g").value
+    mau= document.getElementById("kl_bun").value
     document.getElementById("ttl_gt").value =500
     document.getElementById("xut_gt").value =200
     document.getElementById("tth_gt").value =300
@@ -200,22 +199,42 @@ function set_tab(name_tab) {
   // evt.currentTarget.className += " active";
 }
 
-function set_nd(num) {
-  
+
+function save_bun(){
+  var name,vl,str_mau
+  var i,j
+  str_mau="<option selected disabled>tên mẫu</option>"
+  name = document.getElementById("ten_mau").value;
+  vl= document.getElementById("r").textContent;
+  data_mau[name]=vl
   // console.log(data_mau)
+  for (i=1;i<4;i++){
+    for (j in data_mau){
+      str_mau=str_mau +'<option value="'+data_mau[j]+'">'+j+'</option>'
+      document.getElementById("mau" +i).innerHTML= str_mau
+    }
+    console.log(i)
+    document.getElementById("mau" +i).value= Object.values(data_mau)[i-1]
+    str_mau="<option selected disabled>tên mẫu</option>"
+    set_nd(i)
+  }
+
+}
+function set_nd(num) {
   document.getElementById("r"+num).value=document.getElementById("mau"+num).value
-  // console.log(document.getElementById("mau"+num).value)
   chia_mau(num)
 }
 
 function chia_mau(num) {
   var j,gam,r
-  for (j=1;j<=ar_gam.length+1;j++){
+  for (j=1;j<=ar_gam.length;j++){
     gam = document.getElementById("gam"+j).value;
     // console.log(gam)
-    r= document.getElementById("mau"+num).value    // console.log((gam*100)/r)    
-    document.getElementById("g"+j+"-"+num).innerHTML=((gam*100)/r).toFixed(0)
-    // console.log(gam+"_"+r+"_"+(gam*100)/r)
+    r= document.getElementById("mau"+num).value
+    if (r){
+      document.getElementById("g"+j+"-"+num).innerHTML=((gam*100)/r).toFixed(0)
+      // console.log(gam+"_"+r+"_"+(gam*100)/r)
+    }
   }
 }
 
@@ -231,32 +250,34 @@ function chia_bun(num) {
     for (i = 1; i < 4; i++) {
       r= document.getElementById("mau"+i).value
       if (r!=""){
-      // console.log(r)
-      document.getElementById("g"+j+"-"+i).innerHTML=((gam*100)/r).toFixed(0)
-      // console.log((gam*100)/r)
-       s
+        // console.log(r)
+        document.getElementById("g"+j+"-"+i).innerHTML=((gam*100)/r).toFixed(0)
+        // console.log((gam*100)/r)
       }
     }
   }
 }
 
-function save_bun(){
-  var name,vl,str_mau
-  var i,j
-  str_mau="<option selected disabled>tên mẫu</option>"
-  name = document.getElementById("ten_mau").value;
-  vl= document.getElementById("r").textContent;
-  data_mau[name]=vl
-  // console.log(data_mau)
-  for (i=1;i<4;i++){
-      for (j in data_mau){
-        str_mau=str_mau +'<option value="'+data_mau[j]+'">'+j+'</option>'
-        document.getElementById("mau" +i).innerHTML= str_mau
-      }
-      document.getElementById("mau" +i).value= Object.values(data_mau)[i-1]
-      str_mau="<option selected disabled>tên mẫu</option>"
-      set_nd(i)
-  }
 
+function add_tn(){
+  var table = document.getElementById("table_hc");
+  var row,ar_cp=[]
+  var row = table.insertRow(-1);
+  ar_cp.push("TN"+document.getElementById("tn_num").value+"_"+document.getElementById("kl_bun").value +"g")
+  ar_cp.push(document.getElementById("ttl_gt").value)
+  ar_cp.push(document.getElementById("ttl_ml").textContent)
+  ar_cp.push(document.getElementById("xut_gt").value)
+  ar_cp.push(document.getElementById("xut_ml").textContent)
+  ar_cp.push(document.getElementById("tth_gt").value)
+  ar_cp.push(document.getElementById("tth_ml").textContent)
+  ar_cp.push(document.getElementById("tth_r").textContent)
+  row.innerHTML=
+  '<td>' +ar_cp[0] + '</td>'+
+  '<td style="background-color: aqua;">' +ar_cp[1] + '</td>'+
+  '<td style="color:red;">' +ar_cp[2] + '</td>'+
+  '<td style="background-color: aqua;">' +ar_cp[3] + '</td>'+
+  '<td style="color:red;">' +ar_cp[4] + '</td>'+
+  '<td style="background-color: aqua;">' +ar_cp[5] + '</td>'+
+  '<td style="color:red;">' +ar_cp[6] + '</td>'+
+  '<td>' +ar_cp[7] + '</td>'
 }
-
