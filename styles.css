@@ -35,7 +35,7 @@
     font-size:40pt;
 }
 .f_size_input{
-    font-size:60pt;
+    font-size:2em;
     width: 20%;
 
 }
@@ -79,7 +79,7 @@
 .f_size_caphat_lb{
     font-size:50pt;
     padding-left:5px;
-    width:30%;
+    width:25%;
     float: left;
 }
 
@@ -110,7 +110,7 @@
     width: fit-content;
 }
 .head{
-    max-height: 250px;
+    max-height: 150px;
     display: flex;
     overflow-x: auto;
 }
@@ -119,9 +119,21 @@
     width: 0;
 }
 .head .item{
-    min-width: 150px;
-    height: 100px;
+    min-width: 100px;
+    height: 100;
     padding: 10px;
     text-align: center;
     background-color: aqua;
+}
+.hc_head{
+    text-align: center;
+    background-color: aqua;
+    border-width: 2px;
+    border-color: brown;
+}
+td{
+    padding-top: 10px;
+    border-style: groove; 
+    border-width: 2px; 
+    border-color: brown;
 }
