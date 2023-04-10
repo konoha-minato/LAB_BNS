@@ -273,7 +273,7 @@ function add_tn(){
   ar_cp.push(document.getElementById("tth_r").textContent)
   row.innerHTML=
   '<tr>'+
-    '<th rowspan="2">'+ar_cp[0]+'</th>'+
+    '<th rowspan="2" style=" border-style: groove; border-width: 2px;border-color: brown;" >'+ar_cp[0]+'</th>'+
     '<th colspan="3">'+ten_thuoc+" | "+[ar_cp[1],ar_cp[2],ar_cp[3]].join("_")+" | " +ar_cp[7]+"%"+'</th>'+
   '</tr>'
   row = table.insertRow(-1)
