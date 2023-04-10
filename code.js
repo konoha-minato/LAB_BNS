@@ -57,16 +57,15 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
 }
 
 document.getElementById("defaultOpen").click();
-document.getElementById("naoh").addEventListener("keyup",function(e){
-  if (e.keyCode == 13) {
-    k_naoh=document.getElementById("naoh").value
-    k_hso=document.getElementById("hso").value
-    console.log(k_naoh+"_"+k_hso)
-    }
-});
-{
-  
-}
+// document.getElementById("naoh").addEventListener("keyup",function(e){
+//   if (e.keyCode == 13) {
+//     k_naoh=document.getElementById("naoh").value
+//     k_hso=document.getElementById("hso").value
+//     console.log(k_naoh+"_"+k_hso)
+//     }
+// });
+// {
+// }
 //get data from gsheet
 // google.script.run.withSuccessHandler(getsheet).get_data();
 function getsheet(){
@@ -213,7 +212,7 @@ function save_bun(){
       str_mau=str_mau +'<option value="'+data_mau[j]+'">'+j+'</option>'
       document.getElementById("mau" +i).innerHTML= str_mau
     }
-    console.log(i)
+    // console.log(i)
     document.getElementById("mau" +i).value= Object.values(data_mau)[i-1]
     str_mau="<option selected disabled>tên mẫu</option>"
     set_nd(i)
@@ -261,23 +260,27 @@ function chia_bun(num) {
 
 function add_tn(){
   var table = document.getElementById("table_hc");
-  var row,ar_cp=[]
+  var row,ar_cp=[],ten_thuoc
   var row = table.insertRow(-1);
+  ten_thuoc=document.getElementById("loai_thuoc").value.toUpperCase();
   ar_cp.push("TN"+document.getElementById("tn_num").value+"_"+document.getElementById("kl_bun").value +"g")
   ar_cp.push(document.getElementById("ttl_gt").value)
-  ar_cp.push(document.getElementById("ttl_ml").textContent)
   ar_cp.push(document.getElementById("xut_gt").value)
-  ar_cp.push(document.getElementById("xut_ml").textContent)
   ar_cp.push(document.getElementById("tth_gt").value)
+  ar_cp.push(document.getElementById("ttl_ml").textContent)
+  ar_cp.push(document.getElementById("xut_ml").textContent)
   ar_cp.push(document.getElementById("tth_ml").textContent)
   ar_cp.push(document.getElementById("tth_r").textContent)
   row.innerHTML=
-  '<td>' +ar_cp[0] + '</td>'+
-  '<td style="background-color: aqua;">' +ar_cp[1] + '</td>'+
-  '<td style="color:red;">' +ar_cp[2] + '</td>'+
-  '<td style="background-color: aqua;">' +ar_cp[3] + '</td>'+
-  '<td style="color:red;">' +ar_cp[4] + '</td>'+
-  '<td style="background-color: aqua;">' +ar_cp[5] + '</td>'+
-  '<td style="color:red;">' +ar_cp[6] + '</td>'+
-  '<td>' +ar_cp[7] + '</td>'
+  '<tr>'+
+    '<th rowspan="2">'+ar_cp[0]+'</th>'+
+    '<th colspan="3">'+ten_thuoc+" | "+[ar_cp[1],ar_cp[2],ar_cp[3]].join("_")+" | " +ar_cp[7]+"%"+'</th>'+
+  '</tr>'
+  row = table.insertRow(-1)
+  row.innerHTML=
+  '<tr>'+
+    '<td style="color:red;">'+ar_cp[4]+'</td>'+
+    '<td style="color:red;">'+ar_cp[5]+'</td>'+
+    '<td style="color:red;">'+ar_cp[6]+'</td>'+
+  '</tr>'
 }
