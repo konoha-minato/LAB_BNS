@@ -130,21 +130,6 @@ function check(){ //mode tth
 
 }
 
-function chiphi_thuoc(mau_g){
-  var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml
-    ttl= document.getElementById("ttl_gt").value
-    xut= document.getElementById("xut_gt").value
-    tth= document.getElementById("tth_gt").value
-    ttl_r= Number(document.getElementById("ttl_r").textContent)
-    xut_r= Number(document.getElementById("xut_r").textContent)
-    tth_r= Number(document.getElementById("tth_r").textContent)
-    ttl_ml= (ttl*0.000001*mau_g)/(ttl_r/100)
-    xut_ml= (xut*0.000001*mau_g)/(xut_r/100)
-    tth_ml= (tth*0.000001*mau_g)/(tth_r/100)
-    document.getElementById("ttl_ml").innerHTML =ttl_ml.toFixed(2)
-    document.getElementById("xut_ml").innerHTML =xut_ml.toFixed(2)
-    document.getElementById("tth_ml").innerHTML =tth_ml.toFixed(2)
-}
 function chiphi_sx(){
   var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml,mau,ns
     ns= document.getElementById("ns").value
@@ -165,7 +150,7 @@ function chiphi_sx(){
 
 function mode_sx(){
   var tth,ttl,xut,mau
-    mau= document.getElementById("mau_g").value
+    mau= document.getElementById("kl_bun").value
     ttl= Number(document.getElementById("ttl_sx").textContent)
     xut= Number(document.getElementById("xut_sx").textContent)
     tth= Number(document.getElementById("tth_sx").textContent)
@@ -182,6 +167,21 @@ function cptn(){
     document.getElementById("xut_gt").value =200
     document.getElementById("tth_gt").value =300
     chiphi_thuoc(mau)
+}
+function chiphi_thuoc(mau_g){
+  var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml
+    ttl= document.getElementById("ttl_gt").value
+    xut= document.getElementById("xut_gt").value
+    tth= document.getElementById("tth_gt").value
+    ttl_r= Number(document.getElementById("ttl_r").textContent)
+    xut_r= Number(document.getElementById("xut_r").textContent)
+    tth_r= Number(document.getElementById("tth_r").textContent)
+    ttl_ml= (ttl*0.000001*mau_g)/(ttl_r/100)
+    xut_ml= (xut*0.000001*mau_g)/(xut_r/100)
+    tth_ml= (tth*0.000001*mau_g)/(tth_r/100)
+    document.getElementById("ttl_ml").innerHTML =ttl_ml.toFixed(2)
+    document.getElementById("xut_ml").innerHTML =xut_ml.toFixed(2)
+    document.getElementById("tth_ml").innerHTML =tth_ml.toFixed(2)
 }
 
 function set_tab(name_tab) {
