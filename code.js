@@ -5,6 +5,8 @@ var k_hso,k_naoh
 var data_mau={}
 set_mau_g()
 chiphi_sx()
+document.getElementById("myframe").width = x
+
 //setup start
 var ar_gam=[350,300,260,175,150,130,117,100,87]
 {
