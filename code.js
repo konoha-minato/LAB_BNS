@@ -11,6 +11,20 @@ document.getElementById("myframe").height = y
 //setup start
 var ar_gam=[350,300,260,175,150,130,117,100,87]
 {
+  //bang luu luong
+  var table = document.getElementById("thung_do");
+  var str_data="",i
+  for (i=1;i<=10;i++){
+  var row = table.insertRow(-1);
+    str_data=
+      '<td id="c'+i+'_1">NaOH</td>'+
+      '<td id="c'+i+'_2">NaOH</td>'+
+      '<td id="c'+(i+10)+'_1">NaOH</td>'+
+      '<td id="c'+(i+10)+'_2">NaOH</td>'
+    row.innerHTML=str_data
+
+  }
+  set_luulg()
   //cấp hạt
   // var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
   // var table = document.getElementById("caphat");
@@ -60,19 +74,22 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
 }
 
 document.getElementById("defaultOpen").click();
-// document.getElementById("naoh").addEventListener("keyup",function(e){
-//   if (e.keyCode == 13) {
-//     k_naoh=document.getElementById("naoh").value
-//     k_hso=document.getElementById("hso").value
-//     console.log(k_naoh+"_"+k_hso)
-//     }
-// });
-// {
-// }
-//get data from gsheet
-// google.script.run.withSuccessHandler(getsheet).get_data();
+
+function set_luulg(){
+  var V,ll,deli, sec
+    V= document.getElementById("V_thung").value
+    min= document.getElementById("V1").value
+    deli= parseInt(document.getElementById("do_chia").value)
+    ll=min-deli
+    for (var i=1;i<=20;i++){
+      ll=ll+deli
+      sec=(3600/ll)*V
+      document.getElementById("c"+i+"_1").innerHTML =ll
+      document.getElementById("c"+i+"_2").innerHTML =sec.toFixed(2) 
+    }
+}
+
 function getsheet(){
-  
   // console.log(data)
   document.getElementById("naoh").value =data[0][0]
   document.getElementById("hso").value =data[1][0]

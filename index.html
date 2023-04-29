@@ -15,23 +15,24 @@
   </div>
   <div id="dodem" class="tabs">
     <p>
-      <label style="color:red;font-size: 50pt;" onclick="save_ch()">Giờ </label>
-      <input style="width: 50%;" class="f_size_input" type="text" maxlength="20" id="time" placeholder="giờ lấy">
-    </p>  
-    <table style="width:100%; margin-top: 5px;">
-    <tr>
-      <td><a style="color:red;font-size: 50pt;">NaOH</a></td>
-      <td><input style="width:50%" class="f_size_input" type="number" maxlength="20" id="naoh" placeholder="naoh"></td>
-    </tr>
-    <tr>
-      <td><a style="color:red;font-size: 50pt;">HSO</a></td>
-      <td><input style="width:50%"class="f_size_input" type="number" maxlength="20" id="hso" placeholder="hso"></td>
-    </tr>
+      <label style="color:red;font-size: 1em;">Thể tích thùng đo (lít) </label>
+      <input style="width: 10%;" class="f_size_input" type="number" id="V_thung" value="5" onchange="set_luulg()" >
+      <label style="color:red;font-size: 1em;">Vạch đầu (L/h) </label>
+      <input style="width: 10%;" class="f_size_input" type="number" id="V1" value="100" onchange="set_luulg()">
+      <label style="color:red;font-size: 1em;">độ chia (L/h) </label>
+      <input style="width: 10%;" class="f_size_input" type="number" id="do_chia" value="50" onchange="set_luulg()">
+    </p>
+    <table id="thung_do" style="width:100%; margin-top: 5px; text-align: center; font-size: 2em;">
+      <colgroup width="25%"> 
+      <colgroup width="25%"> 
+      <colgroup width="25%"> 
+      <colgroup width="25%"> 
+      <th>Lưu lượng (L/H)</th>
+      <th>thời gian (s)</th>
+      <th>Lưu lượng (L/H)</th>
+      <th>thời gian (s)</th>
   </table>
   </div>
-
-
-
   <div id="canmau" class="tabs" >
       <div class="do-dem" style="float: none;">
         <div style="padding-top: 10px;">
