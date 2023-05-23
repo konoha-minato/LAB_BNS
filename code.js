@@ -79,12 +79,13 @@ function set_luulg(){
   var V,ll,deli, sec
     V= document.getElementById("V_thung").value
     min= document.getElementById("V1").value
-    deli= parseInt(document.getElementById("do_chia").value)
+    deli= parseFloat(document.getElementById("do_chia").value)
     ll=min-deli
     for (var i=1;i<=20;i++){
+      console.log(ll)
       ll=ll+deli
       sec=(3600/ll)*V
-      document.getElementById("c"+i+"_1").innerHTML =ll
+      document.getElementById("c"+i+"_1").innerHTML =ll.toFixed(2) 
       document.getElementById("c"+i+"_2").innerHTML =sec.toFixed(2) 
     }
 }
@@ -150,6 +151,23 @@ function check(){ //mode tth
 
 }
 
+function check_ll(){ //mode luu luong
+  var log= document.getElementById("md_ll").checked
+  if (log==true){
+    document.getElementById('mode_luuluong').innerHTML = "Chế độ đo pilot"
+    document.getElementById('V_thung').value = "0.05"
+    document.getElementById('V1').value = "1"
+    document.getElementById('do_chia').value = "0.1"
+  } else {
+    document.getElementById('mode_luuluong').innerHTML = "Chế độ đo sản xuất"
+    document.getElementById('V_thung').value = "50"
+    document.getElementById('V1').value = "100"
+    document.getElementById('do_chia').value = "100"
+  }
+  set_luulg()
+  //tinh thuoc
+
+}
 function chiphi_sx(){
   var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml,mau,ns
     ns= document.getElementById("ns").value
@@ -284,8 +302,6 @@ function chia_bun(num) {
     }
   }
 }
-
-
 function add_tn(){
   var table = document.getElementById("table_hc");
   var row,ar_cp=[],ten_thuoc,r_tron
