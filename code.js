@@ -164,7 +164,6 @@ function check_ll(){ //mode luu luong
     document.getElementById('do_chia').value = "100"
   }
   set_luulg()
-  //tinh thuoc
 
 }
 function chiphi_sx(){
