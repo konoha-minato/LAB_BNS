@@ -82,7 +82,6 @@ function set_luulg(){
     deli= parseFloat(document.getElementById("do_chia").value)
     ll=min-deli
     for (var i=1;i<=20;i++){
-      console.log(ll)
       ll=ll+deli
       sec=(3600/ll)*V
       document.getElementById("c"+i+"_1").innerHTML =ll.toFixed(2) 
