@@ -153,13 +153,11 @@ function check(){ //mode tth
 function check_ll(){ //mode luu luong
   var log= document.getElementById("md_ll").checked
   if (log==true){
-    console.log(Chế độ đo pilot)
     document.getElementById('mode_luuluong').innerHTML = "Chế độ đo pilot"
     document.getElementById('V_thung').value = "0.05"
     document.getElementById('V1').value = "1"
     document.getElementById('do_chia').value = "0.1"
   } else {
-    console.log(Chế độ đo sản xuất)
     document.getElementById('mode_luuluong').innerHTML = "Chế độ đo sản xuất"
     document.getElementById('V_thung').value = "50"
     document.getElementById('V1').value = "100"
