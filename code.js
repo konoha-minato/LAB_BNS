@@ -77,6 +77,7 @@ document.getElementById("defaultOpen").click();
 
 function set_luulg(num_fix){
   if (num_fix=="") {num_fix=num_fix}
+  console.log(num_fix)
   var V,ll,deli,sec
     V= document.getElementById("V_thung").value
     min= document.getElementById("V1").value
