@@ -159,7 +159,7 @@ function check_ll(){ //mode luu luong
     document.getElementById('do_chia').value = "0.1"
   } else {
     document.getElementById('mode_luuluong').innerHTML = "Chế độ đo sản xuất"
-    document.getElementById('V_thung').value = "50"
+    document.getElementById('V_thung').value = "5"
     document.getElementById('V1').value = "100"
     document.getElementById('do_chia').value = "100"
   }
