@@ -76,7 +76,7 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
 document.getElementById("defaultOpen").click();
 
 function set_luulg(num){
-  if (num!="") {num_fix=num}
+  if (num!=undefined) {num_fix=num}
   console.log(num_fix)
   var V,ll,deli,sec
     V= document.getElementById("V_thung").value
@@ -161,6 +161,7 @@ function check_ll(){ //mode luu luong
     document.getElementById('V1').value = "1"
     document.getElementById('do_chia').value = "0.1"
   } else {
+    num_fix=0    
     document.getElementById('mode_luuluong').innerHTML = "Chế độ đo sản xuất"
     document.getElementById('V_thung').value = "5"
     document.getElementById('V1').value = "100"
