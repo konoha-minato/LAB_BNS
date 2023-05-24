@@ -75,8 +75,8 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
 
 document.getElementById("defaultOpen").click();
 
-function set_luulg(num_fix){
-  if (num_fix=="") {num_fix=num_fix}
+function set_luulg(num){
+  if (num<>"") {num_fix=num}
   console.log(num_fix)
   var V,ll,deli,sec
     V= document.getElementById("V_thung").value
