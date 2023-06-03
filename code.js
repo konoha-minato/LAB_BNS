@@ -7,7 +7,7 @@ set_mau_g()
 chiphi_sx()
 document.getElementById("myframe").width = x
 document.getElementById("myframe").height = y
-
+var num_fix=0
 //setup start
 var ar_gam=[350,300,260,175,150,130,117,100,87]
 {
@@ -24,7 +24,7 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
     row.innerHTML=str_data
 
   }
-  set_luulg()
+  set_luulg(0)
   //cấp hạt
   // var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
   // var table = document.getElementById("caphat");
@@ -75,8 +75,10 @@ var ar_gam=[350,300,260,175,150,130,117,100,87]
 
 document.getElementById("defaultOpen").click();
 
-function set_luulg(num_fix){
-  var V,ll,deli, sec
+function set_luulg(num){
+  if (num!=undefined) {num_fix=num}
+  console.log(num_fix)
+  var V,ll,deli,sec
     V= document.getElementById("V_thung").value
     min= document.getElementById("V1").value
     deli= parseFloat(document.getElementById("do_chia").value)
@@ -85,7 +87,7 @@ function set_luulg(num_fix){
       ll=ll+deli
       sec=(3600/ll)*V
       document.getElementById("c"+i+"_1").innerHTML =ll.toFixed(num_fix) 
-      document.getElementById("c"+i+"_2").innerHTML =sec.toFixed(2)
+      document.getElementById("c"+i+"_2").innerHTML =sec.toFixed(2) 
     }
 }
 
@@ -150,20 +152,20 @@ function check(){ //mode tth
 
 }
 
-function check_ll(a){ //mode luu luong
+function check_ll(){ //mode luu luong
+  var log= document.getElementById("md_ll").checked
   var num_fix=0
-  if (a==1){//sx
-    document.getElementById('md_pilot').checked=false
-    document.getElementById('V_thung').value = "5"
-    document.getElementById('V1').value = "100"
-    document.getElementById('do_chia').value = "100"
-  }
-  if (a==2){//pilot
-    document.getElementById('md_sx').checked=false
+  if (log==true){
+    document.getElementById('mode_luuluong').innerHTML = "Chế độ đo pilot"
     document.getElementById('V_thung').value = "0.05"
     document.getElementById('V1').value = "1"
     document.getElementById('do_chia').value = "0.1"
     num_fix=2
+  } else {
+    document.getElementById('mode_luuluong').innerHTML = "Chế độ đo sản xuất"
+    document.getElementById('V_thung').value = "5"
+    document.getElementById('V1').value = "100"
+    document.getElementById('do_chia').value = "100"
   }
   set_luulg(num_fix)
 
