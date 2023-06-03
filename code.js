@@ -8,7 +8,7 @@ chiphi_sx()
 document.getElementById("myframe").width = x
 document.getElementById("myframe").height = y
 document.getElementById('md_pilot').checked = false
-document.getElementById('md_pilot').checked = true
+document.getElementById('md_sx').checked = true
 var num_fix=0
 //setup start
 var ar_gam=[350,300,260,175,150,130,117,100,87]
