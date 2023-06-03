@@ -15,16 +15,20 @@
   </div>
   <div id="dodem" class="tabs">
     <p>
-      <a id="mode_luuluong">Chế độ đo sản xuất:</a>
-      <input class="f_size_pha" type="checkbox" id="md_ll" onclick="check_ll()">
+      <a style="font-size: 2em;">Chế độ đo sản xuất:</a>
+      <input class="f_size_pha" type="radio" id="md_sx" onclick="check_ll(1)">
+    </p>
+    <p>
+      <a style="font-size: 2em;">Chế độ đo pilot</a>
+      <input class="f_size_pha" type="radio" id="md_pilot" onclick="check_ll(2)">
     </p>
    
-    <p>
-      <label style="color:red;font-size: 1em;">V thùng đo (lít) </label>
+    <p style="color:red;font-size: 2em;">
+      <label >V thùng đo (lít) </label>
       <input style="width: 10%;" class="f_size_input" type="number" id="V_thung" value="5" onchange="set_luulg()" >
-      <label style="color:red;font-size: 1em;">Vạch đầu (L/h) </label>
+      <label >Mốc đầu (L/h) </label>
       <input style="width: 10%;" class="f_size_input" type="number" id="V1" value="100" onchange="set_luulg()">
-      <label style="color:red;font-size: 1em;">độ chia (L/h) </label>
+      <label >độ chia (L/h) </label>
       <input style="width: 10%;" class="f_size_input" type="number" id="do_chia" value="50" onchange="set_luulg()">
     </p>
     <table id="thung_do" style="width:100%; margin-top: 5px; text-align: center; font-size: 2em;">

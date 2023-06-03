@@ -150,20 +150,20 @@ function check(){ //mode tth
 
 }
 
-function check_ll(){ //mode luu luong
-  var log= document.getElementById("md_ll").checked
+function check_ll(a){ //mode luu luong
   var num_fix=0
-  if (log==true){
-    document.getElementById('mode_luuluong').innerHTML = "Chế độ đo pilot"
+  if (a==1){//sx
+    document.getElementById('md_pilot').checked=false
+    document.getElementById('V_thung').value = "5"
+    document.getElementById('V1').value = "100"
+    document.getElementById('do_chia').value = "100"
+  }
+  if (a==2){//pilot
+    document.getElementById('md_sx').checked=false
     document.getElementById('V_thung').value = "0.05"
     document.getElementById('V1').value = "1"
     document.getElementById('do_chia').value = "0.1"
     num_fix=2
-  } else {
-    document.getElementById('mode_luuluong').innerHTML = "Chế độ đo sản xuất"
-    document.getElementById('V_thung').value = "5"
-    document.getElementById('V1').value = "100"
-    document.getElementById('do_chia').value = "100"
   }
   set_luulg(num_fix)
 
