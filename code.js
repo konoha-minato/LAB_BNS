@@ -7,6 +7,8 @@ set_mau_g()
 chiphi_sx()
 document.getElementById("myframe").width = x
 document.getElementById("myframe").height = y
+document.getElementById('md_pilot').checked = false
+document.getElementById('md_sx').checked = true
 var num_fix=0
 //setup start
 var ar_gam=[350,300,260,175,150,130,117,100,87]
@@ -152,20 +154,20 @@ function check(){ //mode tth
 
 }
 
-function check_ll(){ //mode luu luong
-  var log= document.getElementById("md_ll").checked
-  if (log==true){
-    num_fix=2
-    document.getElementById('mode_luuluong').innerHTML = "Chế độ đo pilot"
-    document.getElementById('V_thung').value = "0.05"
-    document.getElementById('V1').value = "1"
-    document.getElementById('do_chia').value = "0.1"
-  } else {
-    num_fix=0    
-    document.getElementById('mode_luuluong').innerHTML = "Chế độ đo sản xuất"
+function check_ll(a){ //mode luu luong
+  var num_fix=0
+  if (a==1){
+    document.getElementById('md_pilot').checked = false
     document.getElementById('V_thung').value = "5"
     document.getElementById('V1').value = "100"
     document.getElementById('do_chia').value = "100"
+  }
+  if (a==2){
+    document.getElementById('md_sx').checked = false
+    document.getElementById('V_thung').value = "0.05"
+    document.getElementById('V1').value = "1"
+    document.getElementById('do_chia').value = "0.1"
+    num_fix=2
   }
   set_luulg(num_fix)
 
