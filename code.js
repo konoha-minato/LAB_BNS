@@ -190,6 +190,22 @@ function chiphi_sx(){
     document.getElementById("tth_sx").innerHTML =Math.floor(tth_ml)
 }
 
+function chiphi_pl{
+  var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml,mau,ns
+    ns= document.getElementById("ns_pilot").value * 0.001
+    ttl= document.getElementById("ttl_ll").value
+    xut= document.getElementById("xut_ll").value
+    tth= document.getElementById("tth_ll").value
+    ttl_r= document.getElementById("ttl_r_pilot")
+    xut_r= document.getElementById("xut_r_pilot")
+    tth_r= document.getElementById("tth_r_pilot")
+    ttl_ml= (ttl*ns)/(ttl_r/100)
+    xut_ml= (xut*ns)/(xut_r/100)
+    tth_ml= (tth*ns)/(tth_r/100)
+    document.getElementById("ttl_pilot").innerHTML =Math.floor(ttl_ml)
+    document.getElementById("xut_pilot").innerHTML =Math.floor(xut_ml)
+    document.getElementById("tth_pilot").innerHTML =Math.floor(tth_ml)
+}
 function mode_sx(){
   var tth,ttl,xut,mau
     mau= document.getElementById("kl_bun").value

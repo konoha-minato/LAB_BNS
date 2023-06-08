@@ -197,8 +197,23 @@
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="1000" id="xut_ll" onchange="chiphi_sx()"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="4000" value="3000" id="tth_ll" onchange="chiphi_sx()"></td>
       </tr>
+      <tr>
+        <td style="background-color:aqua;">NS <input style="width: 50%; font-size: 1.3em;" type="number" min="1" max="500" value="155" id="ns_pilot" onchange="chiphi_pilot()"> (Kg/h)</span></td>
+        <td colspan="3" class="sub" >PILOT</td>
+      </tr>
+      <tr>
+        <td>Tỉ lệ (%)</td>
+        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="0.5" id="ttl_r_pilot" onchange="chiphi_pl()"></td>
+        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="0.5" id="xut_r_pilot" onchange="chiphi_pl()"></td>
+        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="4000" value="0.5" id="tth_r_pilot" onchange="chiphi_pl()"></td>
+      </tr>
+        <td>Chi phí (L/h)</td>
+        <td class="f_size_chiphi" id="ttl_pilot"></td>
+        <td class="f_size_chiphi" id="xut_pilot"></td>
+        <td class="f_size_chiphi" id="tth_pilot"></td>
+      </tr>
     </table>
-    <table id= "table_hc" style="font-size: 2em;text-align: center;">
+    <!-- <table id= "table_hc" style="font-size: 2em;text-align: center;">
       <colgroup width="30%">
       <colgroup width="20%"> 
       <colgroup width="20%"> 
@@ -209,7 +224,7 @@
         <td class="hc_head">XÚT</td>
         <td class="hc_head">TTH</td>
       </tr>
-    </table>
+    </table> -->
   </div>
   <div id="LOG" class="tabs">
     <iframe id="myframe" src="https://docs.google.com/spreadsheets/d/1-X4iFWGHBIXGQkTXtrzWUU8F8xnRV2H-4fGmRDWKFeg/edit#gid=134904994" width="1000px" height="200px" title="Tutorials"></iframe>
