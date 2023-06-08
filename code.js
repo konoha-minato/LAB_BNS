@@ -203,7 +203,6 @@ function chiphi_pl(){
     ttl_ml= (ttl*ns)/(ttl_r/100)
     xut_ml= (xut*ns)/(xut_r/100)
     tth_ml= (tth*ns)/(tth_r/100)
-    console.log([ttl_ml,xut_ml,tth_ml].join("_"))
     document.getElementById("ttl_pilot").innerHTML =ttl_ml.toFixed(2)
     document.getElementById("xut_pilot").innerHTML =xut_ml.toFixed(2)
     document.getElementById("tth_pilot").innerHTML =tth_ml.toFixed(2)
