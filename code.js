@@ -5,6 +5,7 @@ var k_hso,k_naoh
 var data_mau={}
 set_mau_g()
 chiphi_sx()
+chiphi_pl()
 document.getElementById("myframe").width = x
 document.getElementById("myframe").height = y
 document.getElementById('md_pilot').checked = false
@@ -173,7 +174,7 @@ function check_ll(a){ //mode luu luong
 
 }
 function chiphi_sx(){
-  var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml,mau,ns
+  var tth,ttl,xut,tth_r,ttl_r,xut_r,tth_ml,ttl_ml,xut_ml,mau,ns
     ns= document.getElementById("ns").value
     mau= document.getElementById("mau_g").value
     ttl= document.getElementById("ttl_ll").value
@@ -191,20 +192,21 @@ function chiphi_sx(){
 }
 
 function chiphi_pl(){
-  var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml,ns
-    ns= 0.001* document.getElementById("ns_pilot").value
-    ttl= document.getElementById("ttl_ll").value
-    xut= document.getElementById("xut_ll").value
-    tth= document.getElementById("tth_ll").value
-    ttl_r= document.getElementById("ttl_r_pilot")
-    xut_r= document.getElementById("xut_r_pilot")
-    tth_r= document.getElementById("tth_r_pilot")
+  var tth,ttl,xut,tth_r,ttl_r,xut_r,tth_ml,ttl_ml,xut_ml,ns
+    ns= 0.000001* document.getElementById("ns_pilot").value
+    ttl= document.getElementById("ttl_gt").value
+    xut= document.getElementById("xut_gt").value
+    tth= document.getElementById("tth_gt").value
+    ttl_r= document.getElementById("ttl_r_pilot").value
+    xut_r= document.getElementById("xut_r_pilot").value
+    tth_r= document.getElementById("tth_r_pilot").value
     ttl_ml= (ttl*ns)/(ttl_r/100)
     xut_ml= (xut*ns)/(xut_r/100)
     tth_ml= (tth*ns)/(tth_r/100)
-    document.getElementById("ttl_pilot").innerHTML =Math.floor(ttl_ml)
-    document.getElementById("xut_pilot").innerHTML =Math.floor(xut_ml)
-    document.getElementById("tth_pilot").innerHTML =Math.floor(tth_ml)
+    console.log([ttl_ml,xut_ml,tth_ml].join("_"))
+    document.getElementById("ttl_pilot").innerHTML =ttl_ml.toFixed(2)
+    document.getElementById("xut_pilot").innerHTML =xut_ml.toFixed(2)
+    document.getElementById("tth_pilot").innerHTML =tth_ml.toFixed(2)
 }
 
 function mode_sx(){
@@ -228,7 +230,7 @@ function cptn(){
     chiphi_thuoc(mau)
 }
 function chiphi_thuoc(mau_g){
-  var tth,ttl,xut,tth_r,ttl_r,xut_r,th_ml,ttl_ml,xut_ml
+  var tth,ttl,xut,tth_r,ttl_r,xut_r,tth_ml,ttl_ml,xut_ml
     ttl= document.getElementById("ttl_gt").value
     xut= document.getElementById("xut_gt").value
     tth= document.getElementById("tth_gt").value
@@ -250,6 +252,7 @@ function change_thuoc(name){
     r= Number(document.getElementById(name+"_r").textContent)
     ml= (gam_tan*0.000001*m_bun)/(r/100)
     document.getElementById(name+"_ml").innerHTML =ml.toFixed(2)
+    chiphi_pl()
 }
 function set_tab(name_tab) {
   var i, tabcontent, tablinks;
