@@ -136,3 +136,6 @@ td{
     border-width: 2px; 
     border-color: brown;
 }
+table{
+    border-collapse: collapse;
+}
