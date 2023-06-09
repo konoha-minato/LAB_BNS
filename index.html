@@ -6,35 +6,47 @@
 </head>
 <body style="font-size:15pt; font-family: Verdana;float:inline-start; float: left;">
   <div class="head" id="menu">
-    <div class="item"><button class="tb1" onclick="set_tab('dodem')" >Lưu lượng</button></div>
-    <div class="item"><button class="tb1" onclick="set_tab('canmau')" id="defaultOpen" >Cân mẫu</button></div>
+    <div class="item"><button class="tb1" onclick="set_tab('dodem')" id="defaultOpen" >Lưu lượng</button></div>
+    <div class="item"><button class="tb1" onclick="set_tab('canmau')" >Cân mẫu</button></div>
     <!-- <div class="item"><button class="tb1" onclick="set_tab('caphat')">Cấp hạt</button></div> -->
     <div class="item"><button class="tb1" onclick="set_tab('thuoc')" >Chi phí thuốc</button></div> 
     <!-- <div class="item"><button class="tb1" onclick="set_tab('phantich')">Phân tích</button></div> -->
     <div class="item"><button class="tb1" onclick="set_tab('LOG')" >Nhật ký</button></div>
   </div>
   <div id="dodem" class="tabs">
-    <p>
-      <a style="font-size: 2em;">Chế độ đo sản xuất:</a>
-      <input class="f_size_pha" type="radio" id="md_sx" onclick="check_ll(1)">
+    <p >
+      <a style="font-size: 4em;">Chế độ đo sản xuất:</a>
+      <input class="f_size_pha" style="height: 60px;width: 60px;"  type="radio" id="md_sx" onclick="check_ll(1)">
     </p>
     <p>
-      <a style="font-size: 2em;">Chế độ đo pilot</a>
-      <input class="f_size_pha" type="radio" id="md_pilot" onclick="check_ll(2)">
+      <a style="font-size: 4em;">Chế độ đo pilot</a>
+      <input class="f_size_pha" style="height: 60px;width: 60px;" type="radio" id="md_pilot" onclick="check_ll(2)">
     </p>
-   
-    <p style="color:red;font-size: 2em;">
-      <label >V thùng đo (lít) </label>
-      <input style="width: 20%;" class="f_size_input" type="number" id="V_thung" value="5" onchange="set_luulg()" >
-    </p>
-    <p style="color:red;font-size: 2em;">
+    <table style="font-size: 30pt; padding-top: 10px;">
+    <TR>
+      <TD>
+        <label >V thùng đo (lít) </label> 
+      </TD>
+      <TD>
       <label >Mốc đầu (L/h) </label>
-      <input style="width: 20%;" class="f_size_input" type="number" id="V1" value="100" onchange="set_luulg()">
-    </p>
-    <p style="color:red;font-size: 2em;">
+      </TD>
+      <TD>
       <label >độ chia (L/h) </label>
-      <input style="width: 20%;" class="f_size_input" type="number" id="do_chia" value="50" onchange="set_luulg()">
-    </p>
+      </TD>
+    </TR>
+    <tr>
+      <TD>
+        <input class="f_size_input"  style="width: 100%;" type="number" id="V_thung" value="5" onchange="set_luulg()" >        
+      </TD>
+      <TD>
+        <input class="f_size_input" style="width: 100%;" type="number" id="V1" value="100" onchange="set_luulg()">
+      </TD>
+      <TD>
+        <input class="f_size_input" style="width: 100%;" type="number" id="do_chia" value="50" onchange="set_luulg()">
+      </TD>
+    </TR>  
+   
+    </table>
     <table id="thung_do" style="width:100%; margin-top: 5px; text-align: center; font-size: 3em;">
       <colgroup width="25%"> 
       <colgroup width="25%"> 
