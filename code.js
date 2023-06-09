@@ -1,7 +1,7 @@
 //g bùn
 var x=screen.width
 var y=screen.height
-var k_hso,k_naoh
+var k_hso,k_naoh,heso_V
 var data_mau={}
 set_mau_g()
 chiphi_sx()
@@ -13,6 +13,7 @@ document.getElementById('md_sx').checked = false
 var num_fix=0
 //setup start
 var ar_gam=[350,300,260,175,150,130,117,100,87]
+heso_V=1
 {
   //bang luu luong
   var table = document.getElementById("thung_do");
@@ -82,9 +83,11 @@ document.getElementById("defaultOpen").click();
 
 function set_luulg(num){
   if (num!=undefined) {num_fix=num}
-  console.log(num_fix)
+  // console.log(num_fix)
   var V,ll,deli,sec
-    V= document.getElementById("V_thung").value
+  heso_V=1000
+  // if (document.getElementById("the_tich").value=2) {heso_V=1000}
+    V= document.getElementById("V_thung").value /heso_V
     min= document.getElementById("V1").value
     deli= parseFloat(document.getElementById("do_chia").value)
     ll=min-deli
@@ -162,13 +165,11 @@ function check_ll(a){ //mode luu luong
   if (a==1){
     document.getElementById('md_pilot').checked = false
     document.getElementById('V_thung').value = "5"
-    document.getElementById('the_tich').value = 1    
     document.getElementById('V1').value = "100"
     document.getElementById('do_chia').value = "100"
   }
   if (a==2){
     document.getElementById('md_sx').checked = false
-    document.getElementById('the_tich').value = 2
     document.getElementById('V_thung').value = "50"
     document.getElementById('V1').value = "4"
     document.getElementById('do_chia').value = "0.1"
