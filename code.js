@@ -168,7 +168,7 @@ function check_ll(a){ //mode luu luong
   if (a==2){
     document.getElementById('md_sx').checked = false
     document.getElementById('V_thung').value = "0.05"
-    document.getElementById('V1').value = "1"
+    document.getElementById('V1').value = "4"
     document.getElementById('do_chia').value = "0.1"
     num_fix=2
   }
