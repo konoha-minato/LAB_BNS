@@ -23,9 +23,9 @@
       <input class="f_size_pha" style="height: 60px;width: 60px;" type="radio" id="md_pilot" onclick="check_ll(2)">
     </p>
     <table style="font-size: 30pt; padding-top: 10px;">
-    <TR>
+    <TR style="color: red;">
       <TD>
-        <label >V thùng đo (lít) </label> 
+        <label >V thùng đo</label> 
       </TD>
       <TD>
       <label >Mốc đầu (L/h) </label>
@@ -36,7 +36,11 @@
     </TR>
     <tr>
       <TD>
-        <input class="f_size_input"  style="width: 100%;" type="number" id="V_thung" value="5" onchange="set_luulg()" >        
+        <input class="f_size_input"  style="width: 50%;" type="number" id="V_thung" value="5" onchange="set_luulg()" >
+        <select id="the_tich" style="font-size: 2em ;">
+          <option value="1">L</option>
+          <option value="2">Ml</option>
+        </select>        
       </TD>
       <TD>
         <input class="f_size_input" style="width: 100%;" type="number" id="V1" value="100" onchange="set_luulg()">
