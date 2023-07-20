@@ -255,13 +255,18 @@ function chiphi_thuoc(mau_g){
 }
 
 function change_thuoc(name){
-  var gam_tan,r,ml,m_bun
+  var gam_tan,r,ml,m_bun,ns
     m_bun= document.getElementById("kl_bun").value
     gam_tan= document.getElementById(name+"_gt").value
     r= document.getElementById(name+"_r").value
     ml= (gam_tan*0.000001*m_bun)/(r/100)
     console.log(ml)
     document.getElementById(name+"_ml").innerHTML =ml.toFixed(2)
+    var ll= document.getElementById(name+"_ll").value
+    ns= document.getElementById("ns").value
+    ml= (ll*r*10)/ns
+    document.getElementById(name+"_sx").value =ml.toFixed(0)
+
     chiphi_pl()
 }
 function set_tab(name_tab) {
