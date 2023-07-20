@@ -147,19 +147,19 @@ function set_caphat(num){
     // if (ten!=""){google.script.run.addEvent([ten,"CH",res])};
 
 }
-function check(){ //mode tth
-  var log= document.getElementById("tth").checked
-  if (log==true){
-    document.getElementById('tth_mode').innerHTML = "TTH PHA"
-    document.getElementById('tth_r').value = "1"
-  } else {
-    document.getElementById('tth_mode').innerHTML = "TTH SX"
-    document.getElementById('tth_r').value = "1.2"
-  }
-  //tinh thuoc
-  chiphi_thuoc (document.getElementById("kl_bun").value)
+// function check(){ //mode tth
+//   var log= document.getElementById("tth").checked
+//   if (log==true){
+//     document.getElementById('tth_mode').innerHTML = "TTH PHA"
+//     document.getElementById('tth_r').value = "1"
+//   } else {
+//     document.getElementById('tth_mode').innerHTML = "TTH SX"
+//     document.getElementById('tth_r').value = "1.2"
+//   }
+//   //tinh thuoc
+//   chiphi_thuoc (document.getElementById("kl_bun").value)
 
-}
+// }
 
 function check_ll(a){ //mode luu luong
   var num_fix=0
