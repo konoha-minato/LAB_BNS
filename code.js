@@ -182,18 +182,22 @@ function chiphi_sx(){
   var tth,ttl,xut,tth_r,ttl_r,xut_r,tth_ml,ttl_ml,xut_ml,mau,ns
     ns= document.getElementById("ns").value
     mau= document.getElementById("mau_g").value
+
     ttl= document.getElementById("ttl_ll").value
     xut= document.getElementById("xut_ll").value
     tth= document.getElementById("tth_ll").value
+
     ttl_r= document.getElementById("ttl_r").value
     xut_r= document.getElementById("xut_r").value
     tth_r= document.getElementById("tth_r").value
+
     ttl_ml= (ttl*ttl_r*10)/ns
     xut_ml= (xut*xut_r*10)/ns
     tth_ml= (tth*tth_r*10)/ns
-    document.getElementById("ttl_sx").innerHTML =Math.floor(ttl_ml)
-    document.getElementById("xut_sx").innerHTML =Math.floor(xut_ml)
-    document.getElementById("tth_sx").innerHTML =Math.floor(tth_ml)
+
+    document.getElementById("ttl_sx").innerHTML =ttl_ml.toFixed(2)
+    document.getElementById("xut_sx").innerHTML =xut_ml.toFixed(2)
+    document.getElementById("tth_sx").innerHTML =tth_ml.toFixed(2)
 }
 
 function chiphi_pl(){
