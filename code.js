@@ -6,6 +6,7 @@ var data_mau={}
 set_mau_g()
 chiphi_sx()
 chiphi_pl()
+
 document.getElementById("myframe").width = x
 document.getElementById("myframe").height = y
 document.getElementById('md_pilot').checked = true  
@@ -195,9 +196,9 @@ function chiphi_sx(){
     xut_ml= (xut*xut_r*10)/ns
     tth_ml= (tth*tth_r*10)/ns
 
-    document.getElementById("ttl_sx").innerHTML =ttl_ml.toFixed(2)
-    document.getElementById("xut_sx").innerHTML =xut_ml.toFixed(2)
-    document.getElementById("tth_sx").innerHTML =tth_ml.toFixed(2)
+    document.getElementById("ttl_sx").innerHTML =ttl_ml.toFixed(0)
+    document.getElementById("xut_sx").innerHTML =xut_ml.toFixed(0)
+    document.getElementById("tth_sx").innerHTML =tth_ml.toFixed(0)
 }
 
 function chiphi_pl(){
@@ -242,9 +243,9 @@ function chiphi_thuoc(mau_g){
     ttl= document.getElementById("ttl_gt").value
     xut= document.getElementById("xut_gt").value
     tth= document.getElementById("tth_gt").value
-    ttl_r= Number(document.getElementById("ttl_r").textContent)
-    xut_r= Number(document.getElementById("xut_r").textContent)
-    tth_r= Number(document.getElementById("tth_r").textContent)
+    ttl_r=document.getElementById("ttl_r").value
+    xut_r= document.getElementById("xut_r").value
+    tth_r= document.getElementById("tth_r").value
     ttl_ml= (ttl*0.000001*mau_g)/(ttl_r/100)
     xut_ml= (xut*0.000001*mau_g)/(xut_r/100)
     tth_ml= (tth*0.000001*mau_g)/(tth_r/100)
