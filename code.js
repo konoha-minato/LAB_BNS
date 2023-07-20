@@ -253,7 +253,7 @@ function change_thuoc(name){
   var gam_tan,r,ml,m_bun
     m_bun= document.getElementById("kl_bun").value
     gam_tan= document.getElementById(name+"_gt").value
-    r= Number(document.getElementById(name+"_r").value)
+    r= document.getElementById(name+"_r").value
     ml= (gam_tan*0.000001*m_bun)/(r/100)
     document.getElementById(name+"_ml").innerHTML =ml.toFixed(2)
     chiphi_pl()
