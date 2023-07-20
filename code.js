@@ -221,9 +221,9 @@ function chiphi_pl(){
 function mode_sx(){
   var tth,ttl,xut,mau
     mau= document.getElementById("kl_bun").value
-    ttl= Number(document.getElementById("ttl_sx").textContent)
-    xut= Number(document.getElementById("xut_sx").textContent)
-    tth= Number(document.getElementById("tth_sx").textContent)
+    ttl= document.getElementById("ttl_sx").value
+    xut= document.getElementById("xut_sx").value
+    tth= document.getElementById("tth_sx").value
     document.getElementById("ttl_gt").value =(Math.floor(ttl/10)+1)*10
     document.getElementById("xut_gt").value =(Math.floor(xut/5)+1)*5
     document.getElementById("tth_gt").value =(Math.floor(tth/10)+1)*10
