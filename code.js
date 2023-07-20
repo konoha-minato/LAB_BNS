@@ -6,6 +6,9 @@ var data_mau={}
 set_mau_g()
 chiphi_sx()
 chiphi_pl()
+change_thuoc('ttl')
+change_thuoc('xut')
+change_thuoc('tth')
 document.getElementById("myframe").width = x
 document.getElementById("myframe").height = y
 document.getElementById('md_pilot').checked = true  
