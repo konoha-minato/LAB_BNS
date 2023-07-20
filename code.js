@@ -196,9 +196,9 @@ function chiphi_sx(){
     xut_ml= (xut*xut_r*10)/ns
     tth_ml= (tth*tth_r*10)/ns
 
-    document.getElementById("ttl_sx").innerHTML =ttl_ml.toFixed(0)
-    document.getElementById("xut_sx").innerHTML =xut_ml.toFixed(0)
-    document.getElementById("tth_sx").innerHTML =tth_ml.toFixed(0)
+    document.getElementById("ttl_sx").value =ttl_ml.toFixed(0)
+    document.getElementById("xut_sx").value =xut_ml.toFixed(0)
+    document.getElementById("tth_sx").value =tth_ml.toFixed(0)
 }
 
 function chiphi_pl(){

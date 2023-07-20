@@ -224,15 +224,15 @@
       </tr>
       <tr>
         <td style="background-color:aqua;" onclick="mode_sx()">Năng suất</td>
-        <td class="f_size_chiphi" id="ttl_sx"></td>
-        <td class="f_size_chiphi" id="xut_sx"></td>
-        <td class="f_size_chiphi" id="tth_sx"></td>
+        <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="10000" id="ttl_sx" onchange="change_thuoc('ttl')"></td>
+        <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="10000" id="xut_sx" onchange="change_thuoc('xut')"></td>
+        <td><input class="f_size_chiphi" style="width: 80%;" type="number" min="1" max="10000" id="tth_sx" onchange="change_thuoc('tth')"></td>
       </tr>
       <tr>
         <td><input style="width: 50%; font-size: 1.3em;" type="number" min="1" max="500" value="155" id="ns" onchange="chiphi_sx()"> (T/h)</td>
-        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="1200" id="ttl_ll" onchange="chiphi_sx()"></td>
-        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="1000" id="xut_ll" onchange="chiphi_sx()"></td>
-        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="4000" value="3000" id="tth_ll" onchange="chiphi_sx()"></td>
+        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="3000" id="ttl_ll" onchange="chiphi_sx()"></td>
+        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="400" id="xut_ll" onchange="chiphi_sx()"></td>
+        <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="4000" value="3500" id="tth_ll" onchange="chiphi_sx()"></td>
       </tr>
       <tr>
         <td style="background-color:aqua;">NS <input style="width: 50%; font-size: 1.3em;" type="number" min="1" max="500" value="120" id="ns_pilot" onchange="chiphi_pilot()"> (Kg/h)</span></td>
