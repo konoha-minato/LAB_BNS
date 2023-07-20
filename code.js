@@ -150,10 +150,10 @@ function check(){ //mode tth
   var log= document.getElementById("tth").checked
   if (log==true){
     document.getElementById('tth_mode').innerHTML = "TTH PHA"
-    document.getElementById('tth_r').innerHTML = "1"
+    document.getElementById('tth_r').value = "1"
   } else {
     document.getElementById('tth_mode').innerHTML = "TTH SX"
-    document.getElementById('tth_r').innerHTML = "1.2"
+    document.getElementById('tth_r').value = "1.2"
   }
   //tinh thuoc
   chiphi_thuoc (document.getElementById("kl_bun").value)
