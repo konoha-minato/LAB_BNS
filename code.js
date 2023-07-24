@@ -203,9 +203,9 @@ function chiphi_sx(num){
     ttl= document.getElementById("ttl_sx").value
     xut= document.getElementById("xut_sx").value
     tth= document.getElementById("tth_sx").value
-    ttl_ml= (ns*ttl_ml)/(ttl_r*10)
-    xut_ml= (ns*xut_ml_ml)/(xut_r_r*10)
-    tth_ml= (ns*tth_ml)/(tth_r*10)
+    ttl_ml= (ns*ttl)/(ttl_r*10)
+    xut_ml= (ns*xut)/(xut_r_r*10)
+    tth_ml= (ns*tth)/(tth_r*10)
     document.getElementById("ttl_ll").value =ttl_ml.toFixed(0)
     document.getElementById("xut_ll").value =xut_ml.toFixed(0)
     document.getElementById("tth_ll").value =tth_ml.toFixed(0)
