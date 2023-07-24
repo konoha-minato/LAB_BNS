@@ -4,7 +4,7 @@ var y=screen.height
 var k_hso,k_naoh,heso_V
 var data_mau={}
 set_mau_g()
-chiphi_sx(0)
+chiphi_sx(1)
 chiphi_pl()
 
 document.getElementById("myframe").width = x
