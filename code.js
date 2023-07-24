@@ -179,26 +179,39 @@ function check_ll(a){ //mode luu luong
   set_luulg(num_fix)
 
 }
-function chiphi_sx(){
+function chiphi_sx(num){
   var tth,ttl,xut,tth_r,ttl_r,xut_r,tth_ml,ttl_ml,xut_ml,mau,ns
     ns= document.getElementById("ns").value
     mau= document.getElementById("mau_g").value
-
-    ttl= document.getElementById("ttl_ll").value
-    xut= document.getElementById("xut_ll").value
-    tth= document.getElementById("tth_ll").value
 
     ttl_r= document.getElementById("ttl_r").value
     xut_r= document.getElementById("xut_r").value
     tth_r= document.getElementById("tth_r").value
 
+  if (num==1){
+    ttl= document.getElementById("ttl_ll").value
+    xut= document.getElementById("xut_ll").value
+    tth= document.getElementById("tth_ll").value
     ttl_ml= (ttl*ttl_r*10)/ns
     xut_ml= (xut*xut_r*10)/ns
     tth_ml= (tth*tth_r*10)/ns
-
     document.getElementById("ttl_sx").value =ttl_ml.toFixed(0)
     document.getElementById("xut_sx").value =xut_ml.toFixed(0)
     document.getElementById("tth_sx").value =tth_ml.toFixed(0)
+  }
+  else{
+    ttl= document.getElementById("ttl_sx").value
+    xut= document.getElementById("xut_sx").value
+    tth= document.getElementById("tth_sx").value
+    ttl_ml= (ns*ttl_ml)/(ttl_r*10)
+    xut_ml= (ns*xut_ml_ml)/(xut_r_r*10)
+    tth_ml= (ns*tth_ml)/(tth_r*10)
+    document.getElementById("ttl_ll").value =ttl_ml.toFixed(0)
+    document.getElementById("xut_ll").value =xut_ml.toFixed(0)
+    document.getElementById("tth_ll").value =tth_ml.toFixed(0)
+
+    
+  }
 }
 
 function chiphi_pl(){
