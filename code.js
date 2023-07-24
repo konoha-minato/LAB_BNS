@@ -204,7 +204,7 @@ function chiphi_sx(num){
     xut= document.getElementById("xut_sx").value
     tth= document.getElementById("tth_sx").value
     ttl_ml= (ns*ttl)/(ttl_r*10)
-    xut_ml= (ns*xut)/(xut_r_r*10)
+    xut_ml= (ns*xut)/(xut_r*10)
     tth_ml= (ns*tth)/(tth_r*10)
     document.getElementById("ttl_ll").value =ttl_ml.toFixed(0)
     document.getElementById("xut_ll").value =xut_ml.toFixed(0)
