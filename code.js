@@ -186,7 +186,7 @@ function chiphi_sx(num){
 
     ttl_r= document.getElementById("ttl_r").value
     xut_r= document.getElementById("xut_r").value
-    tth_r= document.getElementById("tth_r").value
+    tth_r= document.getElementById("tth_r_sx").value
 
   if (num==1){
     ttl= document.getElementById("ttl_ll").value
@@ -275,11 +275,12 @@ function change_thuoc(name){
     ml= (gam_tan*0.000001*m_bun)/(r/100)
     console.log(ml)
     document.getElementById(name+"_ml").innerHTML =ml.toFixed(2)
-    var ll= document.getElementById(name+"_ll").value
-    ns= document.getElementById("ns").value
-    ml= (ll*r*10)/ns
-    document.getElementById(name+"_sx").value =ml.toFixed(0)
-
+    if (name!="tth"){
+      var ll= document.getElementById(name+"_ll").value
+      ns= document.getElementById("ns").value
+      ml= (ll*r*10)/ns
+      document.getElementById(name+"_sx").value =ml.toFixed(0)
+    }
     chiphi_pl()
 }
 function set_tab(name_tab) {
