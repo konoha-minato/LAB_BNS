@@ -30,7 +30,7 @@ heso_V=1
 
   }
   set_luulg(0)
-  check_ll(2)
+  check_ll(1)
 
   //cấp hạt
   // var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
