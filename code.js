@@ -107,17 +107,17 @@ function getsheet(){
 }
 
 function set_mau_g(){
-  var m,mau,v,mb,d,bi,r,ttl_r
+  var m,mau,v,mb,d,bi,r
     d= document.getElementById("d").value
-    mau= document.getElementById("mau_g").value
+    mau= document.getElementById("kl_bun").value
     m= document.getElementById("m_g").value
     v= document.getElementById("v_ml").value
     mb= document.getElementById("m_binh").value
-    bi= parseInt(document.getElementById("m_bi").value)
+    // bi= parseInt(document.getElementById("m_bi").value)
     r=((((d*v)/(m-mb)-d)/(1-d))*100).toFixed(2)
     document.getElementById("r").innerHTML =r
-    document.getElementById("bun_can").innerHTML =Math.floor((mau*100)/r)
-    document.getElementById("bun_can3").innerHTML =Math.floor((mau*100)/r)+bi
+    // document.getElementById("bun_can").innerHTML =Math.floor((mau*100)/r)
+    // document.getElementById("bun_can3").innerHTML =Math.floor((mau*100)/r)+bi
     chiphi_thuoc (mau)
 }
 
@@ -182,7 +182,7 @@ function check_ll(a){ //mode luu luong
 function chiphi_sx(num){
   var tth,ttl,xut,tth_r,ttl_r,xut_r,tth_ml,ttl_ml,xut_ml,mau,ns
     ns= document.getElementById("ns").value
-    mau= document.getElementById("mau_g").value
+    // mau= document.getElementById("mau_g").value
 
     ttl_r= document.getElementById("ttl_r").value
     xut_r= document.getElementById("xut_r").value
