@@ -13,7 +13,7 @@ document.getElementById('md_pilot').checked = true
 document.getElementById('md_sx').checked = false
 var num_fix=0
 //setup start
-var ar_gam=[400,300,260,175,150,130,117,100,87]
+var ar_gam=[400,300,260,200,150,130,134,100,87]
 heso_V=1
 {
   //bang luu luong
