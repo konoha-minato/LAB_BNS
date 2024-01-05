@@ -87,31 +87,39 @@
       <div class="do-dem" style="float: none;">
         <div style="padding-top: 10px;">
             <a style="color:red;">Tên mẫu </a><input class="f_size_input" style="width: 50%;" type="text" maxlength="20" id="ten_mau" placeholder="tên mẫu">
+            <button style="background-color:red; border-radius:10px; font-size: 60px;" onclick="save_bun()" >LƯU MẪU</button>
+        </div>
+        <div style="padding-top: 10px;">
+            <a style="color:red;">Mẫu (g) </a><input class="f_size_input" type="number" max="1000" id="mau_g" value="260" onchange="set_mau_g()">
+            <a style="color:red;">D= </a><input class="f_size_input" type="number" max="10" value="2.6" id="d" onchange="set_mau_g()">
         </div>
         <table style="padding-top: 10px;">
-          <colgroup width="20%"> 
-          <colgroup width="30%"> 
-          <colgroup width="25%"> 
-          <colgroup width="25%">
           <tr>
               <td>M (g)</td>
-              <td><input class="f_size_input" style="font-weight: bold;" type="number" min="1" max="3000" value="1800" id="m_g" onchange="set_mau_g()"></td>
-              <td style="color:red;">D=</td>
-              <td><input class="f_size_input" style="color: red;" type="number" max="10" value="2.7" id="d" onchange="set_mau_g()"></td>
+              <td><input class="f_size_lb" style="font-size:2em; font-weight: bold;width: 60%;" type="number" min="1" max="3000" value="2000" id="m_g" onchange="set_mau_g()"></td>
+              <td>Rắn (%)</td>
+              <td><a class="f_size_lb" id="r"></a></td>
           </tr>
           <tr>
               <td>V (ml)</td>
-              <td><input class="f_size_input" type="number" min="1" max="3000" id="v_ml" value="1000"></td>
-              <td>Rắn (%)</td>
-              <td><a class="f_size_input" id="r"></a></td>
+              <td><input class="f_size_lb" type="number" min="1" max="3000" id="v_ml" value="1000"></td>
+              <td>Bùn cân (g)</td>
+              <td><a class="f_size_lb" style="color: red;font-weight: bold;" id="bun_can"></a></td>
+          </tr>
+          
+          <tr>
+              <td>M bình (g)</td>
+              <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_binh" value="700" onchange="set_mau_g()" ></td>
+              <td>Bùn (cả bì)</td>
+              <td><a class="f_size_lb"   id="bun_can3"></a></td>
           </tr>
           <tr>
-              <td style="font-size: .8em;">M bình (g)</td>
-              <td><input class="f_size_input" type="number" min="1" max="3000" id="m_binh" value="550" onchange="set_mau_g()" ></td>
+              <td>M bì (g)</td>
+              <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_bi" value="70" onchange="set_mau_g()" ></td>
           </tr>
         </table>
-        <div  style="font-size: 1.5em;text-align: center ;color:red;background-color:greenyellow;border-radius: 20px;" onclick="save_bun()" >CHIA MẪU</div> 
-        <table id= "table_gam" style="font-size: 20pt; padding-top: 10px;">
+        <p style="width: 100%; color:red;background-color:greenyellow;text-align: center; ">CHIA MẪU</p>
+        <table id= "table_gam" style="font-size: 30pt; padding-top: 10px;">
           <colgroup width="10%"> 
           <colgroup width="20%"> 
           <colgroup width="20%"> 
@@ -169,29 +177,32 @@
       <label style="color:red;font-size: 30pt;" >TN</label>
       <input class="f_size_input" style="width: 10%;" type="text" value="1" id="tn_num">
       <label style="color:red;font-size: 30pt;" >M bùn (g)</label>
-      <input class="f_size_input" style="width: 20%;font-size: 3em;" type="number" value="260" id="kl_bun" onchange="chiphi_thuoc(this.value)">
-      <!-- <button style="background-color: greenyellow; color:red;font-size: 40pt; border-radius: 20px;" onclick="add_tn()">+ chi phí</button> -->
+      <input class="f_size_input" style="width: 40%;font-size: 3em;" type="number" value="260" id="kl_bun" onchange="chiphi_thuoc(this.value)">
+      <button style="background-color: greenyellow; color:red;font-size: 40pt; border-radius: 20px;" onclick="add_tn()">+ chi phí</button>
     </p>
-    <!-- <p>
-      <label style="color:red;font-size: 30pt;" >Loại thuốc</label>
+    <p>
+      <label style="color:red;font-size: 30pt;" >tổ hợp thuốc</label>
       <input class="f_size_input" style="width: 30%;font-size: 3em;" type="text" id="loai_thuoc">
       <label style="color:red;font-size: 30pt;" >tỉ lệ trộn</label>
       <input class="f_size_input" style="width: 30%;font-size: 3em;" type="text" id="r_tron">
-    </p> -->
+    </p>
 
     <table style="font-size: 2em;">
       <colgroup width="30%"> 
       <colgroup width="22%"> 
       <colgroup width="22%"> 
       <colgroup width="22%"> 
+      <tr>
+          <td colspan="4" class="sub" onclick="save_thuoc()">Lưu lượng thuốc</td>
+      </tr>
       <tr style="text-align: center;">
-        <td onclick="save_thuoc()" style="background-color:orange;">Thí nghiệm</td>
+        <td></td>
         <td style="background-color:yellow;border: 1px;">TTL</td>
         <td style="background-color:yellow;border: 1px;">XÚT</td>
         <td style="background-color:yellow;border: 1px;">TTH</td>
       </tr>
       <tr>
-        <td style="background-color:greenyellow;font-size: 0.8em;" onclick="cptn()">Chi  phí (g/T)</td>
+        <td style="background-color:greenyellow;" onclick="cptn()">Chi  phí (g/T)</td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="3000" value="500" id="ttl_gt" onchange="change_thuoc('ttl')"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="3000" value="200" id="xut_gt" onchange="change_thuoc('xut')"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="3000" value="300" id="tth_gt" onchange="change_thuoc('tth')"></td>
@@ -218,13 +229,14 @@
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" id="tth_sx" onchange="chiphi_sx(0)"></td>
       </tr>
       <tr>
-        <td><input style="width: 50%; font-size: 1.3em;" type="number" min="1" max="500" value="155" id="ns" onchange="chiphi_sx(1)">(T/h)</td>
+        <td><input style="width: 50%; font-size: 1.3em;" type="number" min="1" max="500" value="155" id="ns" onchange="chiphi_sx(1)"> (T/h)</td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="10000" value="5000" id="ttl_ll" onchange="chiphi_sx(1)"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="10000" value="500" id="xut_ll" onchange="chiphi_sx(1)"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="10000" value="4000" id="tth_ll" onchange="chiphi_sx(1)"></td>
       </tr>
       <tr>
-        <td colspan="4" class="sub" style="font-size: 1em;">PILOT Năng suất <input style="width: 20%;font-size: 1em;font-weight: bolder;color: red;" type="number" min="1" max="500" value="120" id="ns_pilot" onchange="chiphi_pilot()">(Kg/h)</span></td>
+        <td style="background-color:aqua;">NS <input style="width: 50%; font-size: 1.3em;" type="number" min="1" max="500" value="120" id="ns_pilot" onchange="chiphi_pilot()"> (Kg/h)</span></td>
+        <td colspan="3" class="sub" >PILOT</td>
       </tr>
       <tr>
         <td>Tỉ lệ (%)</td>
@@ -232,7 +244,7 @@
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" value="0.5" id="xut_r_pilot" onchange="chiphi_pl()"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="4000" value="0.5" id="tth_r_pilot" onchange="chiphi_pl()"></td>
       </tr>
-        <td style="font-size: 0.9em;">Chi phí (L/h)</td>
+        <td>Chi phí (L/h)</td>
         <td class="f_size_chiphi" id="ttl_pilot"></td>
         <td class="f_size_chiphi" id="xut_pilot"></td>
         <td class="f_size_chiphi" id="tth_pilot"></td>
