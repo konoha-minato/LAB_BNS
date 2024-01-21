@@ -91,32 +91,33 @@
         </div>
         <div style="padding-top: 10px;">
             <a style="color:red;">Mẫu (g) </a><input class="f_size_input" style="width: 50%;" type="number" max="1000" id="mau_g" value="260" onchange="set_mau_g()">
-            <a style="color:red;">D= </a><input class="f_size_input" style="width: 50%;" type="number" max="10" value="2.7" id="d" onchange="set_mau_g()">
         </div>
         <table style="padding-top: 10px;">
           <tr>
               <td>M (g)</td>
-              <td><input class="f_size_lb" style="font-size:2em; font-weight: bold;width: 60%;" type="number" min="1" max="3000" value="2000" id="m_g" onchange="set_mau_g()"></td>
-              <td>Rắn (%)</td>
-              <td><a class="f_size_lb" id="r"></a></td>
+              <td><input class="f_size_lb" style="font-size:2em; font-weight: bold;width: 60%;color:red;" type="number" min="1" max="3000" value="1900" id="m_g" onchange="set_mau_g()"></td>
+              <td style="color:red;">D= </td> 
+              <td><input class="f_size_input" type="number" max="10" value="2.7" id="d" onchange="set_mau_g()"></td>
           </tr>
           <tr>
               <td>V (ml)</td>
               <td><input class="f_size_lb" type="number" min="1" max="3000" id="v_ml" value="1000"></td>
-              <td>Bùn cân (g)</td>
-              <td><a class="f_size_lb" style="color: red;font-weight: bold;" id="bun_can"></a></td>
+              <td>Rắn (%)</td>
+              <td><a class="f_size_lb" id="r"></a></td>
           </tr>
           
           <tr>
               <td>M bình (g)</td>
               <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_binh" value="555" onchange="set_mau_g()" ></td>
-              <td>Bùn (cả bì)</td>
-              <td><a class="f_size_lb"   id="bun_can3"></a></td>
+              <td>Bùn cân (g)</td>
+              <td><a class="f_size_lb" style="color: red;font-weight: bold;" id="bun_can"></a></td>
+              <!-- <td>Bùn (cả bì)</td>
+              <td><a class="f_size_lb"   id="bun_can3"></a></td> -->
           </tr>
-          <tr>
+          <!-- <tr>
               <td>M bì (g)</td>
               <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_bi" value="70" onchange="set_mau_g()" ></td>
-          </tr>
+          </tr> -->
         </table>
         <p style="width: 100%; color:red;background-color:greenyellow;text-align: center; ">CHIA MẪU</p>
         <table id= "table_gam" style="font-size: 20pt; padding-top: 10px;">
