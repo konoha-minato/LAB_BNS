@@ -7,8 +7,8 @@ set_mau_g()
 chiphi_sx(1)
 chiphi_pl()
 
-document.getElementById("myframe").width = x
-document.getElementById("myframe").height = y
+// document.getElementById("myframe").width = x
+// document.getElementById("myframe").height = y
 document.getElementById('md_pilot').checked = true  
 document.getElementById('md_sx').checked = false
 var num_fix=0
