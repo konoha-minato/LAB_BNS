@@ -324,13 +324,16 @@ function set_nd(num) {
 }
 
 function chia_mau(num) {
-  var j,gam,r
+  var j,gam,r,m_bun,del_r
+  del_r = document.getElementById("delta_r").value*0.01;
   for (j=1;j<=ar_gam.length;j++){
     gam = document.getElementById("gam"+j).value;
     // console.log(gam)
     r= document.getElementById("mau"+num).value
     if (r){
-      document.getElementById("g"+j+"-"+num).innerHTML=((gam*100)/r).toFixed(0)
+      m_bun=((gam*100)/r).toFixed(0)
+      m_bun=parseInt(m_bun)+ parseInt( m_bun*del_r)
+      document.getElementById("g"+j+"-"+num).innerHTML=parseInt(m_bun)
       // console.log(gam+"_"+r+"_"+(gam*100)/r)
     }
   }

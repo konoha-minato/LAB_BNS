@@ -110,17 +110,11 @@
           <tr>
               <td>M bình (g)</td>
               <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_binh" value="555" onchange="set_mau_g()" ></td>
-              <td>Bùn cân (g)</td>
-              <td><a class="f_size_lb" style="color: red;font-weight: bold;" id="bun_can"></a></td>
-              <!-- <td>Bùn (cả bì)</td>
-              <td><a class="f_size_lb"   id="bun_can3"></a></td> -->
+              <td>Bù % rắn</td>
+              <td><input class="f_size_lb" type="number" min="0" max="100" id="delta_r" value="2.5" onchange="save_bun()" ></td>
           </tr>
-          <!-- <tr>
-              <td>M bì (g)</td>
-              <td><input class="f_size_lb" type="number" min="1" max="3000" id="m_bi" value="70" onchange="set_mau_g()" ></td>
-          </tr> -->
         </table>
-        <p style="width: 100%; color:red;background-color:greenyellow;text-align: center; border-radius: 30px;font-size: 40pt; " onclick="save_bun()">CHIA MẪU</p>
+        <div style="width: 100%; color:red;background-color:greenyellow;text-align: center; border-radius: 30px;font-size: 40pt; " onclick="save_bun()">CHIA MẪU</div> 
         <table id= "table_gam" style="font-size: 20pt; padding-top: 10px;">
           <colgroup width="10%"> 
           <colgroup width="20%"> 
