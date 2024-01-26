@@ -41,7 +41,7 @@
 }
 .f_size_lb{
     font-size:1.5em;
-    width: fit-content;
+    width: min-content;
 }
 
 .f_size_chiphi{
