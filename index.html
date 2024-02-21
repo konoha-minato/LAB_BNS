@@ -9,8 +9,8 @@
     <div class="item"><button class="tb1" onclick="set_tab('dodem')" >Lưu lượng</button></div>
     <div class="item"><button class="tb1" onclick="set_tab('canmau')" >Cân mẫu</button></div>
     <!-- <div class="item"><button class="tb1" onclick="set_tab('caphat')">Cấp hạt</button></div> -->
-    <div class="item"><button class="tb1" onclick="set_tab('thuoc')" id="defaultOpen" >Chi phí thuốc</button></div> 
-    <!-- <div class="item"><button class="tb1" onclick="set_tab('phantich')">Phân tích</button></div> -->
+    <div class="item"><button class="tb1" onclick="set_tab('thuoc')" >Chi phí thuốc</button></div> 
+    <div class="item"><button class="tb1" onclick="set_tab('tuyen')" id="defaultOpen" >TUYỂN</button></div>
     <!-- <div class="item"><button class="tb1" onclick="set_tab('LOG')" >Nhật ký</button></div> -->
   </div>
 
@@ -154,20 +154,14 @@
     </p>
     list cap hat
   
-  </div>
-  <div id="phantich" class="tabs">
-    <table style="width:100%; margin-top: 5px;">
-      <tr>
-        <td><a style="color:red;font-size: 50pt;">NaOH</a></td>
-        <td><input style="width:50%" class="f_size_input" type="number" maxlength="20" id="naoh" placeholder="naoh"></td>
-      </tr>
-      <tr>
-        <td><a style="color:red;font-size: 50pt;">HSO</a></td>
-        <td><input style="width:50%"class="f_size_input" type="number" maxlength="20" id="hso" placeholder="hso"></td>
-      </tr>
+  </div>-->
+  <div id="tuyen" class="tabs">
+    <table style="width:100%; margin-top: 5px;border-spacing: 2px;" id="tb_tuyen">
+      <!-- <colgroup width="50%"> 
+      <colgroup width="50%"> -->
     </table>
-    list p2o5
-  </div> -->
+    <button style="background-color:red; border-radius:10px; font-size: 60px;" onclick="set_tuyen()" >GỬI MẪU</button>
+  </div> 
   <div id="thuoc" class="tabs">
     <p>
       <!-- <label style="color:red;font-size: 30pt;" >TN</label>

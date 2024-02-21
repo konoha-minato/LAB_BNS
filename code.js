@@ -49,22 +49,22 @@ heso_V=1
   // // console.log(str_p2o5)
   // table.innerHTML= table.innerHTML +str_data
 
-  //phân tích
-  // var ar_p205=['TC1_2','TC3_4','TT1','TT2','BV1','BV2','TG1','TG2']
-  // var table = document.getElementById("phantich");
-  // str_data="",i
-  // for (i=0;i<ar_p205.length;i++){
-  // // var row = table.insertRow(-1);
-  //   str_data=str_data+
-  //   '<p>'+
-  //   '<input class="f_size_phantich_lb" type="text" maxlength="8" id="pt_name_'+(i+1)+'" value="'+ar_p205[i]+'">'+
-  //   '<input class="f_size_phantich" type="number" min="0" max="50" id="pt_xut_'+(i+1)+'" placeholder="naoh">'+
-  //   '<input class="f_size_phantich" type="number" min="0" max="10" id="pt_axit_'+(i+1)+'" placeholder="hso">'+
-  //   '<label class="f_size_phantich_res" id="pt_res_'+(i+1)+'" onclick="set_pt('+(i+1)+')">res</label>'+
-  //   '</p>'
-  // }
-  // // console.log(str_p2o5)
-  // table.innerHTML= table.innerHTML +str_data
+  //tuyển
+  var ar_tuyen=['giờ','nd vào','nd thải','Mức','M','N','lọc','Bùn T(P2O5)','cấp hạt (%)','thuốc pha']
+  var table = document.getElementById("tb_tuyen");
+  str_data="",dt="",temp="",i
+  dt='<tr>'+
+    '<td><a style="color:red;font-size: 30pt;" id1>vl</a></td>'+
+    '<td><input class="f_size_input" style="width:90%" type="number" id2></td>'+
+    '</tr>'
+  for (i=0;i<ar_tuyen.length;i++){
+    temp=dt.replace("id1","id=t1-"+ i).replace("id2","id=t2-" +i).replace("vl",ar_tuyen[i])
+    if(i==9){
+       temp=temp.replace("number","text")
+    }
+    str_data+=temp
+  }
+  table.innerHTML= table.innerHTML +str_data
   
   //chia bùn
   var table = document.getElementById("table_gam");
@@ -121,18 +121,17 @@ function set_mau_g(){
     chiphi_thuoc (mau)
 }
 
-function set_pt(num){
-  var ten, naoh,hso,res
-    k_naoh=document.getElementById("naoh").value
-    k_hso=document.getElementById("hso").value
-    ten= document.getElementById("pt_name_" +num).value
-    naoh= document.getElementById("pt_xut_" +num).value      
-    hso= document.getElementById("pt_axit_" +num).value
-    res=Math.floor(k_naoh*naoh*100)-Math.floor(k_hso*hso*0.1*100)
-    res=res/100
-    // console.log(k_naoh+"_"+k_hso)
-    document.getElementById("pt_res_" +num).innerHTML = (0.01*parseInt(k_naoh*naoh*100)).toFixed(2)+","+(0.01*parseInt(k_hso*hso*0.1*100)).toFixed(2) +"_"+res
-    // if (ten!=""){google.script.run.addEvent([ten,"P2O5",res])};
+function set_tuyen(){
+  var vl,i,ar=[]
+  for (i=0;i<ar_tuyen.length;i++){
+    vl=document.getElementById("t2-"+ i).value
+    ar.push(vl)
+  }
+  vl = "https://docs.google.com/forms/d/e/1FAIpQLScR3iECFN_knhGaC_2z2RQXIQU7bYVr__ZmgcQCeFtB46d0LQ/formResponse?entry.1895639889=" & ar.join(" ")
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", vl);
+  xhr.setRequestHeader("Content-Type", "application/text; charset=UTF-8")
+  // console.log(ar)
 }
 
 function set_caphat(num){
