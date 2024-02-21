@@ -55,7 +55,7 @@ heso_V=1
   str_data="",dt="",temp="",i
   dt='<tr>'+
     '<td><a style="color:red;font-size: 60pt;" id1>vl</a></td>'+
-    '<td><input class="f_size_input" style="width:90%;font-size: 60pt; " type="number" id2></td>'+
+    '<td><input style="width:90%;font-size: 60pt; " type="number" id2></td>'+
     '</tr>'
   for (i=0;i<ar_tuyen.length;i++){
     temp=dt.replace("id1","id=t1-"+ i).replace("id2","id=t2-" +i).replace("vl",ar_tuyen[i])
