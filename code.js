@@ -6,6 +6,7 @@ var data_mau={}
 set_mau_g()
 chiphi_sx(1)
 chiphi_pl()
+var link_gsheet = "https://docs.google.com/forms/d/e/1FAIpQLScR3iECFN_knhGaC_2z2RQXIQU7bYVr__ZmgcQCeFtB46d0LQ/formResponse?entry.1895639889="
 
 // document.getElementById("myframe").width = x
 // document.getElementById("myframe").height = y
@@ -31,23 +32,6 @@ heso_V=1
   }
   set_luulg(0)
   check_ll(1)
-
-  //cấp hạt
-  // var ar_caphat=['Nghiền 1','Nghiền 2','PC đơn','PC kép','tràn 1','tràn 2','tràn 3','cát 1','cát 2','cát 3']
-  // var table = document.getElementById("caphat");
-  // var str_data="",i
-  // for (i=0;i<ar_caphat.length;i++){
-  // // var row = table.insertRow(-1);
-  //   str_data=str_data+
-  //   '<p>'+
-  //     '<input class="f_size_caphat_lb" type="text" maxlength="10" id="ch_name_'+(i+1)+'" value="'+ar_caphat[i]+'">'+
-  //     '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_am_'+(i+1)+'" placeholder="âm">'+
-  //     '<input class="f_size_caphat" type="number" min="0" max="1000" id="ch_tong_'+(i+1)+'" placeholder="tổng">'+
-  //     '<label style="width:20px; background-color:cyan;font-size: 40pt;" id="ch_res_'+(i+1)+'" onclick="set_caphat('+(i+1)+')" >res</label>'+
-  //   '</p>'
-  // }
-  // // console.log(str_p2o5)
-  // table.innerHTML= table.innerHTML +str_data
 
   //tuyển
   var ar_tuyen=['giờ','nd vào','nd thải','Mức','M','N','lọc','Bùn T(P2O5)','cấp hạt (%)','thuốc pha']
@@ -127,10 +111,12 @@ function set_tuyen(){
     vl=document.getElementById("t2-"+ i).value
     ar.push(vl)
   }
-  vl = "https://docs.google.com/forms/d/e/1FAIpQLScR3iECFN_knhGaC_2z2RQXIQU7bYVr__ZmgcQCeFtB46d0LQ/formResponse?entry.1895639889=" & ar.join(" ")
+  vl = link + ar.join(" ")  + "&submit=Submit"
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", vl);
-  xhr.setRequestHeader("Content-Type", "application/text; charset=UTF-8")
+  xhr.open("get", vl,true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send();
+  // xhr.send();
   // console.log(ar)
 }
 
@@ -146,19 +132,6 @@ function set_caphat(num){
     // if (ten!=""){google.script.run.addEvent([ten,"CH",res])};
 
 }
-// function check(){ //mode tth
-//   var log= document.getElementById("tth").checked
-//   if (log==true){
-//     document.getElementById('tth_mode').innerHTML = "TTH PHA"
-//     document.getElementById('tth_r').value = "1"
-//   } else {
-//     document.getElementById('tth_mode').innerHTML = "TTH SX"
-//     document.getElementById('tth_r').value = "1.2"
-//   }
-//   //tinh thuoc
-//   chiphi_thuoc (document.getElementById("kl_bun").value)
-
-// }
 
 function check_ll(a){ //mode luu luong
   var num_fix=0
