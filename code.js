@@ -107,7 +107,7 @@ function set_mau_g(){
 
 function set_tuyen(){
   var vl,i,ar=[]
-  for (i=0;i<ar_tuyen.length;i++){
+  for (i=0;i<=9;i++){
     vl=document.getElementById("t2-"+ i).value
     ar.push(vl)
   }
@@ -116,7 +116,6 @@ function set_tuyen(){
   xhr.open("get", vl,true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.send();
-  // xhr.send();
   // console.log(ar)
 }
 
