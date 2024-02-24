@@ -111,7 +111,7 @@ function set_tuyen(){
     vl=document.getElementById("t2-"+ i).value
     ar.push(vl)
   }
-  vl = link + ar.join(" ")  + "&submit=Submit"
+  vl = link + "TUYEN"+ar.join(" ") + "&submit=Submit"
   const xhr = new XMLHttpRequest();
   xhr.open("get", vl,true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
