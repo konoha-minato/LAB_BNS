@@ -128,7 +128,6 @@ function set_caphat(num){
     res=Math.floor((am/tong)*10000)/100
     console.log(res)
     document.getElementById("ch_res_"+num).innerHTML=res
-    // if (ten!=""){google.script.run.addEvent([ten,"CH",res])};
 
 }
 
