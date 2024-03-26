@@ -328,31 +328,20 @@ function chia_bun(num) {
     }
   }
 }
-function add_tn(){
+function save_thuoc(){
   var table = document.getElementById("table_hc");
-  var row,ar_cp=[],ten_thuoc,r_tron
+  var row,ten_tn,cp1,cp2,cp3
+  var ar_cp=[]
   var row = table.insertRow(-1);
-  ten_thuoc=document.getElementById("loai_thuoc").value.toUpperCase();
-  r_tron=document.getElementById("r_tron").value.toUpperCase();
 
-  ar_cp.push("TN"+document.getElementById("tn_num").value+"_"+document.getElementById("kl_bun").value +"g")
-  ar_cp.push(document.getElementById("ttl_gt").value)
-  ar_cp.push(document.getElementById("xut_gt").value)
-  ar_cp.push(document.getElementById("tth_gt").value)
-  ar_cp.push(document.getElementById("ttl_ml").textContent)
-  ar_cp.push(document.getElementById("xut_ml").textContent)
-  ar_cp.push(document.getElementById("tth_ml").textContent)
-  ar_cp.push(document.getElementById("tth_r").textContent)
+  ten_tn=document.getElementById("ten_tn").value;
+  cp1=document.getElementById("ttl_gt").value +"\n"+document.getElementById("ttl_ml").textContent ;
+  cp2=document.getElementById("xut_gt").value +"\n"+document.getElementById("xut_ml").textContent ;
+  cp2=document.getElementById("tth_gt").value +"\n"+document.getElementById("tth_ml").textContent ;
+  // ar_cp.push("TN"+document.getElementById("tn_num").value+"_"+document.getElementById("kl_bun").value +"g")
   row.innerHTML=
   '<tr>'+
     '<th rowspan="2" style=" border-style: groove; border-width: 2px;border-color: brown;" >'+ar_cp[0]+"&#13"+ten_thuoc+" "+r_tron+'</th>'+
     '<th colspan="3">'+[ar_cp[1],ar_cp[2],ar_cp[3]].join("_")+" | " +ar_cp[7]+"%"+'</th>'+
-  '</tr>'
-  row = table.insertRow(-1)
-  row.innerHTML=
-  '<tr>'+
-    '<td style="color:red;">'+ar_cp[4]+'</td>'+
-    '<td style="color:red;">'+ar_cp[5]+'</td>'+
-    '<td style="color:red;">'+ar_cp[6]+'</td>'+
   '</tr>'
 }
