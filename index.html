@@ -87,7 +87,7 @@
           
           <tr>
               <td>M bình (g)</td>
-              <td><input class="f_size_lb" type="number" min="1" max="1000" id="m_binh" value="555" onchange="set_mau_g()" ></td>
+              <td><input class="f_size_lb" type="number" min="1" max="1000" id="m_binh" value="550" onchange="set_mau_g()" ></td>
               <td>Bù % bùn</td>
               <td><input class="f_size_lb" type="number" min="0" max="100" id="delta_r" value="2.5" onchange="save_bun()" ></td>
           </tr>
@@ -146,7 +146,7 @@
       <colgroup width="22%"> 
       <colgroup width="22%"> 
       <tr>
-          <td colspan="4" class="sub" onclick="save_thuoc()">Lưu lượng thuốc</td>
+          <td colspan="4" class="sub" style="border-radius: 40px;" onclick="save_thuoc()">Lưu lượng thuốc</td>
       </tr>
       <tr style="text-align: center;">
         <td></td>
@@ -155,13 +155,13 @@
         <td style="background-color:yellow;border: 1px;">TTH</td>
       </tr>
       <tr>
-        <td style="background-color:greenyellow;" onclick="cptn()">Chi  phí (g/T)</td>
+        <td style="background-color:greenyellow;border-radius: 40px;text-align: center;" onclick="cptn()">Chi  phí (g/T)</td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="3000" value="500" id="ttl_gt" onchange="change_thuoc('ttl')"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="3000" value="200" id="xut_gt" onchange="change_thuoc('xut')"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="3000" value="300" id="tth_gt" onchange="change_thuoc('tth')"></td>
       </tr>
       <tr>
-        <td>Chi phí (ml)</td>
+        <td >Chi phí (ml)</td>
         <td class="f_size_chiphi" id="ttl_ml"></td>
         <td class="f_size_chiphi" id="xut_ml"></td>
         <td class="f_size_chiphi" id="tth_ml"></td>
@@ -176,7 +176,7 @@
         </td>
       </tr>
       <tr>
-        <td style="background-color:aqua;" onclick="mode_sx()">Năng suất</td>
+        <td style="background-color:aqua;border-radius: 40px;text-align: center;" onclick="mode_sx()">Năng suất</td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" id="ttl_sx" onchange="chiphi_sx(0)"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" id="xut_sx" onchange="chiphi_sx(0)"></td>
         <td><input class="f_size_chiphi" style="width: 100%;" type="number" min="1" max="2000" id="tth_sx" onchange="chiphi_sx(0)"></td>
