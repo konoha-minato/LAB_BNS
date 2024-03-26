@@ -330,7 +330,7 @@ function chia_bun(num) {
 }
 function save_thuoc(){
   var table = document.getElementById("table_hc");
-  var row,ten_tn,gram,cp1,cp2,cp3
+  var row,ten_tn,gram,cp1,cp2,cp3,temp
   var ar_cp=[]
   var row = table.insertRow(-1);
   ten_tn=document.getElementById("ten_tn").value;
@@ -338,13 +338,11 @@ function save_thuoc(){
   cp1=document.getElementById("ttl_gt").value +'<br>'+document.getElementById("ttl_ml").textContent ;
   cp2=document.getElementById("xut_gt").value +'<br>'+document.getElementById("xut_ml").textContent ;
   cp3=document.getElementById("tth_gt").value +'<br>'+document.getElementById("tth_ml").textContent ;
-  row.innerHTML=
-  '<tr>'+
-    '<td>'+ten_tn+'</td>'+
-    '<td>'+gram+'</td>'+
-    '<td>'+cp1+'</td>'+
-    '<td>'+cp2+'</td>'+
-    '<td>'+cp3+'</td>'+
-  '</tr>'
-  console.log(ten_tn)
+  temp='<tr><td>v1</td><td>v2</td><td>v3</td><td>v4</td><td>v5</td></tr>'
+  temp=temp.replace("v1",ten_tn)
+  .replace("v2",gram)
+  .replace("v3",cp1)
+  .replace("v4",cp2)
+  .replace("v5",cp3)
+  row.innerHTML=temp  // console.log(ten_tn)
 }
