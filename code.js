@@ -299,10 +299,10 @@ function chia_mau(num) {
   for (j=1;j<=ar_gam.length;j++){
     gam = document.getElementById("gam"+j).value;
     // console.log(gam)
-    r= document.getElementById("mau"+num).value
+    r= document.getElementById("r"+num).value
     if (r){
       m_bun=((gam*100)/r).toFixed(0)
-      m_bun=parseInt(m_bun)+ parseInt( m_bun*del_r)
+      m_bun=parseInt(m_bun)+ parseInt(m_bun*del_r)
       document.getElementById("g"+j+"-"+num).innerHTML=parseInt(m_bun)
       // console.log(gam+"_"+r+"_"+(gam*100)/r)
     }
