@@ -330,18 +330,19 @@ function chia_bun(num) {
 }
 function save_thuoc(){
   var table = document.getElementById("table_hc");
-  var row,ten_tn,cp1,cp2,cp3
+  var row,ten_tn,gram,cp1,cp2,cp3,temp
   var ar_cp=[]
   var row = table.insertRow(-1);
-
   ten_tn=document.getElementById("ten_tn").value;
-  cp1=document.getElementById("ttl_gt").value +"\n"+document.getElementById("ttl_ml").textContent ;
-  cp2=document.getElementById("xut_gt").value +"\n"+document.getElementById("xut_ml").textContent ;
-  cp2=document.getElementById("tth_gt").value +"\n"+document.getElementById("tth_ml").textContent ;
-  // ar_cp.push("TN"+document.getElementById("tn_num").value+"_"+document.getElementById("kl_bun").value +"g")
-  row.innerHTML=
-  '<tr>'+
-    '<th rowspan="2" style=" border-style: groove; border-width: 2px;border-color: brown;" >'+ar_cp[0]+"&#13"+ten_thuoc+" "+r_tron+'</th>'+
-    '<th colspan="3">'+[ar_cp[1],ar_cp[2],ar_cp[3]].join("_")+" | " +ar_cp[7]+"%"+'</th>'+
-  '</tr>'
+  gram=document.getElementById("kl_bun").value;
+  cp1=document.getElementById("ttl_gt").value +'<br>'+document.getElementById("ttl_ml").textContent ;
+  cp2=document.getElementById("xut_gt").value +'<br>'+document.getElementById("xut_ml").textContent ;
+  cp3=document.getElementById("tth_gt").value +'<br>'+document.getElementById("tth_ml").textContent ;
+  temp='<tr><td>v1</td><td>v2</td><td>v3</td><td>v4</td><td>v5</td></tr>'
+  temp=temp.replace("v1",ten_tn)
+  .replace("v2",gram)
+  .replace("v3",cp1)
+  .replace("v4",cp2)
+  .replace("v5",cp3)
+  row.innerHTML=temp  // console.log(ten_tn)
 }
