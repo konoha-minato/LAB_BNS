@@ -338,7 +338,7 @@ function save_thuoc(){
   cp1=document.getElementById("ttl_gt").value +"_"+document.getElementById("xut_gt").value+"_"+document.getElementById("tth_gt").value
   cp2=document.getElementById("ttl_ml").textContent+"_"+document.getElementById("xut_ml").textContent+"_"+document.getElementById("tth_ml").textContent
   cp3=cp1+'<br>'+cp2
-  temp='<tr><td>v1</td><td>v2</td><td>v3</td>'
+  temp='<tr><td class="f_size_chiphi">v1</td><td class="f_size_chiphi">v2</td><td class="f_size_chiphi">v3</td>'
   temp=temp.replace("v1",ten_tn)
   .replace("v2",gram)
   .replace("v3",cp3)
