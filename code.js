@@ -335,14 +335,12 @@ function save_thuoc(){
   var row = table.insertRow(-1);
   ten_tn=document.getElementById("ten_tn").value;
   gram=document.getElementById("kl_bun").value;
-  cp1=document.getElementById("ttl_gt").value +'<br>'+document.getElementById("ttl_ml").textContent ;
-  cp2=document.getElementById("xut_gt").value +'<br>'+document.getElementById("xut_ml").textContent ;
-  cp3=document.getElementById("tth_gt").value +'<br>'+document.getElementById("tth_ml").textContent ;
-  temp='<tr><td>v1</td><td>v2</td><td>v3</td><td>v4</td><td>v5</td></tr>'
+  cp1=document.getElementById("ttl_gt").value +"_"+document.getElementById("xut_gt").value+"_"+document.getElementById("tth_gt").value
+  cp2=document.getElementById("ttl_ml").textContent+"_"+document.getElementById("xut_ml").textContent+"_"+document.getElementById("tth_ml").textContent
+  cp3=cp1+'<br>'+cp2
+  temp='<tr><td>v1</td><td>v2</td><td>v3</td>'
   temp=temp.replace("v1",ten_tn)
   .replace("v2",gram)
-  .replace("v3",cp1)
-  .replace("v4",cp2)
-  .replace("v5",cp3)
+  .replace("v3",cp3)
   row.innerHTML=temp  // console.log(ten_tn)
 }
