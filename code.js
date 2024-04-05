@@ -8,6 +8,13 @@ chiphi_sx(1)
 chiphi_pl()
 var link_gsheet = "https://docs.google.com/forms/d/e/1FAIpQLScR3iECFN_knhGaC_2z2RQXIQU7bYVr__ZmgcQCeFtB46d0LQ/formResponse?entry.1895639889="
 
+const base = 'https://docs.google.com/document/d/1sRPz1WkG2wus-wflWxaaGCWkpm134HZRaPqDixZi0Xg';
+const data = []
+fetch(base)
+      .then(res => res.text())
+      .then(rep => {
+console.log(base.textContent)
+      })
 // document.getElementById("myframe").width = x
 // document.getElementById("myframe").height = y
 document.getElementById('md_pilot').checked = true  
