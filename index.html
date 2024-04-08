@@ -47,24 +47,25 @@
         </TD>
       </TR>
     </table>
+    <br>
     <table id="thung_do" style="width:100%; margin-top: 5px; text-align: center; font-size: 3em;">
       <colgroup width="25%"> 
       <colgroup width="25%"> 
       <colgroup width="25%"> 
       <colgroup width="25%">
       <tr>
-        <td colspan="4">Thời gian đo</td>        
+        <td>(L/H)</td>
+        <td>(s)</td>
+        <td>(L/H)</td>
+        <td>(s)</td>
       </tr>
-      <th>(L/H)</th>
-      <th>(s)</th>
-      <th>(L/H)</th>
-      <th>(s)</th>
   </table>
   </div>
   <div id="canmau" class="tabs" >
       <div class="do-dem" style="float: none;">
         <div style="padding-top: 10px;">
-            <a style="color:red;">Tên mẫu </a><input class="f_size_input" style="width: 50%;" type="text" maxlength="20" id="ten_mau" placeholder="tên mẫu">
+            <a style="color:red;">Tên mẫu</a>
+            <input class="f_size_input" style="width: 50%;" type="text" maxlength="20" id="ten_mau" placeholder="tên mẫu">
             <!-- <button style="background-color:red; border-radius:10px; font-size: 60px;" onclick="save_bun()" >LƯU MẪU</button> -->
         </div>
         <table style="padding-top: 10px;">
@@ -84,12 +85,10 @@
               <td>Rắn (%)</td>
               <td><a class="f_size_lb" id="r"></a></td>
           </tr>
-          
           <tr>
               <td>M bình (g)</td>
               <td><input class="f_size_lb" type="number" min="1" max="1000" id="m_binh" value="550" onchange="set_mau_g()" ></td>
-              <td>Bù % bùn</td>
-              <td><input class="f_size_lb" type="number" min="0" max="100" id="delta_r" value="2.5" onchange="save_bun()" ></td>
+              <td colspan="2">Bù <input class="f_size_lb" style="width: 30%;" type="number" min="0" max="100" id="delta_r" value="2.5" onchange="save_bun()" > % gam bùn</td>
           </tr>
         </table>
         <div style="width: 100%; color:red;background-color:greenyellow;text-align: center; border-radius: 30px;font-size: 60pt; " onclick="save_bun()">CHIA MẪU</div> 
@@ -255,10 +254,6 @@
       <td colspan="2"><input style="width:90%;font-size: 60pt; " type="text" id="t2-9"></td>
     </tr>
     </table>
-
-
-
-
 
     <button style="background-color:red; border-radius:10px; font-size: 60px;" onclick="set_tuyen()">GỬI MẪU</button>
   </div>
