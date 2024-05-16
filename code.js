@@ -4,7 +4,7 @@ var y=screen.height
 var k_hso,k_naoh,heso_V
 var data_mau={}
 set_mau_g()
-chiphi_sx(1)
+cptn()
 chiphi_pl()
 var link_gsheet = "https://docs.google.com/forms/d/e/1FAIpQLScR3iECFN_knhGaC_2z2RQXIQU7bYVr__ZmgcQCeFtB46d0LQ/formResponse?entry.1895639889="
 // const base = 'https://docs.google.com/document/d/1sRPz1WkG2wus-wflWxaaGCWkpm134HZRaPqDixZi0Xg';
@@ -252,7 +252,7 @@ function mode_sx(){
 function chiphi_sx(num){
   var tth,ttl,xut,tth_r,ttl_r,xut_r,tth_ml,ttl_ml,xut_ml,mau,ns
     ns= document.getElementById("ns").value
-    // mau= document.getElementById("mau_g").value
+    mau= document.getElementById("mau_g").value
     ttl_r= document.getElementById("ttl_r").value
     xut_r= document.getElementById("xut_r").value
     tth_r= document.getElementById("tth_r_sx").value
