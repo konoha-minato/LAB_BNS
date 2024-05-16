@@ -109,7 +109,7 @@ function set_mau_g(){
     document.getElementById("r").innerHTML =r
     // document.getElementById("bun_can").innerHTML =Math.floor((mau*100)/r)
     // document.getElementById("bun_can3").innerHTML =Math.floor((mau*100)/r)+bi
-    chiphi_thuoc (mau)
+    // save_bun()
 }
 
 function set_tuyen(){
@@ -186,10 +186,22 @@ function chiphi_sx(num){
     document.getElementById("ttl_ll").value =ttl_ml.toFixed(0)
     document.getElementById("xut_ll").value =xut_ml.toFixed(0)
     document.getElementById("tth_ll").value =tth_ml.toFixed(0)
-
-    
+   
   }
 }
+function set_chiphi(){
+  var chiphi,mau
+  chiphi= document.getElementById("ten_tn").value
+  console.log(chiphi)
+  if (!chiphi.includes(",")){return}
+  chiphi=chiphi.split(",")  
+  document.getElementById("ttl_gt").value =chiphi[0]
+  document.getElementById("xut_gt").value =chiphi[1]
+  document.getElementById("tth_gt").value =chiphi[2]
+  mau= document.getElementById("kl_bun").value
+  chiphi_thuoc(mau)
+}
+
 
 function chiphi_pl(){
   var tth,ttl,xut,tth_r,ttl_r,xut_r,tth_ml,ttl_ml,xut_ml,ns
