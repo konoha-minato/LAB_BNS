@@ -186,15 +186,14 @@ function chiphi_sx(num){
     document.getElementById("ttl_ll").value =ttl_ml.toFixed(0)
     document.getElementById("xut_ll").value =xut_ml.toFixed(0)
     document.getElementById("tth_ll").value =tth_ml.toFixed(0)
-   
   }
 }
 function set_chiphi(){
   var chiphi,mau
   chiphi= document.getElementById("chiphi").value
   console.log(chiphi)
-  if (!chiphi.includes(",")){return}
-  chiphi=chiphi.split(",")  
+  if (!chiphi.includes("_")){return}
+  chiphi=chiphi.split("_")  
   document.getElementById("ttl_gt").value =chiphi[0]
   document.getElementById("xut_gt").value =chiphi[1]
   document.getElementById("tth_gt").value =chiphi[2]
@@ -285,7 +284,6 @@ function set_tab(name_tab) {
   document.getElementById(name_tab).style.display = "block";
   // evt.currentTarget.className += " active";
 }
-
 
 function save_bun(){
   var name,vl,str_mau
