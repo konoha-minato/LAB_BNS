@@ -228,6 +228,7 @@ function set_chiphi(){
   var chiphi,mau
   chiphi= document.getElementById("chiphi").value
   console.log(chiphi)
+  if (chiphi.includes("-")){chiphi=chiphi.replace("-","_")}
   if (!chiphi.includes("_")){return}
   chiphi=chiphi.split("_")  
   document.getElementById("ttl_gt").value =chiphi[0]
