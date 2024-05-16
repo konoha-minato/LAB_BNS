@@ -191,7 +191,7 @@ function chiphi_sx(num){
 }
 function set_chiphi(){
   var chiphi,mau
-  chiphi= document.getElementById("ten_tn").value
+  chiphi= document.getElementById("chiphi").value
   console.log(chiphi)
   if (!chiphi.includes(",")){return}
   chiphi=chiphi.split(",")  
