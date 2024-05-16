@@ -11,12 +11,12 @@
   float:left;
 }
 .tb1{
-    background-color: chartreuse;
-    border-color: brown;
+    background-color: transparent;
+    /* border-color:yellow; */
     margin-left: 10px;
     font-size:20pt;
 }
-.tb2{
+/* .tb2{
     margin-left: 20px;
     background-color:green;
     float: left;
@@ -27,7 +27,7 @@
     background-color: yellow;
     float: left;
     border-color: brown;
-}
+} */
 
 .sub{
     text-align: center;
@@ -114,15 +114,18 @@
     overflow-x: auto;
 }
 
-.head::-webkit-scrollbar{
+/* .head::-webkit-scrollbar{
     width: 0;
-}
+} */
 .head .item{
     min-width: 100px;
     height: 100;
     padding: 10px;
     text-align: center;
     background-color: aqua;
+    color:red;
+    border-radius: 20px;
+
 }
 .hc_head{
     text-align: center;
