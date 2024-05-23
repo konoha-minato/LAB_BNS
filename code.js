@@ -21,6 +21,7 @@ const data = []
 document.getElementById('md_pilot').checked = true  
 document.getElementById('md_sx').checked = false
 var num_fix=0
+
 //setup start
 var ar_gam=[400,300,260,200,150,130,134,100,87]
 heso_V=1
@@ -56,8 +57,7 @@ heso_V=1
   //   }
   //   str_data+=temp
   // }
-  // table.innerHTML= table.innerHTML +str_data
-  
+  // table.innerHTML= table.innerHTML +str_data  
   //chia bùn
   var table = document.getElementById("table_gam");
   var row,i
@@ -343,6 +343,7 @@ function save_thuoc(){
   cp2=document.getElementById("ttl_ml").textContent+"_"+document.getElementById("xut_ml").textContent+"_"+document.getElementById("tth_ml").textContent
   cp3=cp1+'<br>'+cp2
   temp='<tr><td class="f_size_chiphi">v1</td><td class="f_size_chiphi">v2</td><td class="f_size_chiphi">v3</td>'
+
   temp=temp.replace("v1",ten_tn)
   .replace("v2",gram)
   .replace("v3",cp3)
